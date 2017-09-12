@@ -14,10 +14,15 @@
     width: 480px;
     height: 320px;
     position: absolute;
+    text-align: center;
     top: auto;
+    bottom: auto;
     left: auto;
+    right: auto;
 }
 #showtime{
+    margin: 0 auto;
     width: 440px;
     height: 300px;
+    font-size: 77px;
 }
