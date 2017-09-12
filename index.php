@@ -4,15 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <title>rasClock</title>
-</head>
-
-<body>
-    <div class="time">
-    <script type="text/javascript">start();</script>
-    <span id="showtime"></span>
-    </div>
-</body>
-
 <script type="text/javascript">
     var xmlHttp;
     function createXMLHttpRequest(){
@@ -41,4 +32,13 @@
         }
     }
 </script>
+</head>
+<body>
+    <div class="time">
+    <script type="text/javascript">start();</script>
+    <span id="showtime"></span>
+    </div>
+</body>
+
+
 </html>
