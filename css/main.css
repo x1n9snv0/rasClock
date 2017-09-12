@@ -18,6 +18,8 @@
     right: 50%
 }
 #showtime{
+    width: 440;
+    height: 300;
     position: relative;
     top: 50%;
     bottom: 50%;
