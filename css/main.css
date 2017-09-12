@@ -28,6 +28,6 @@ body{
 #showtime{
     margin: 0 auto;
     position: relative;
-    top: 30%;
-
+    top: 25%;
+    font-size: 98px;
 }
