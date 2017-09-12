@@ -30,8 +30,8 @@ body{
     position: relative;
     top: 50%;
 }
-.sec{
-    font-size: 30px;
+#showtime{
+    margin: 0 auto;
     position: relative;
-    top: -34px;
+    top: 50%;
 }
