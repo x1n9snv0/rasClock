@@ -2,12 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <title>rasClock</title>
 </head>
 
 <body>
-    <input type="button" value="开始显示时间" id="go" onclick="start()" />
-    <p>当前时间：<font color="red"><span id="showtime"></span></font></p>
+    <div class="time">
+    start()
+    <span id="showtime"></span>
+    </div>
 </body>
 
 <script type="text/javascript">
