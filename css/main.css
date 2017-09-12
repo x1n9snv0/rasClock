@@ -1,3 +1,10 @@
+@font-face {
+ font-family: 'MFYueHeiNoncommercial-Light';
+ src: url('../font/MFYueHeiNoncommercial-Light.eot');
+ src: url('../font/MFYueHeiNoncommercial-Light.woff') format('woff'),
+ url('../font/MFYueHeiNoncommercial-Light.ttf') format('truetype'),
+ url('../font/bMFYueHeiNoncommercial-Light.svg#MFYueHeiNoncommercial-Light') format('svg');
+}
 body{
     background: #000;
     padding: 0px;
