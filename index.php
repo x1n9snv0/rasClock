@@ -8,7 +8,7 @@
 
 <body>
     <div class="time">
-    start()
+    <script type="text/javascript">start();</script>
     <span id="showtime"></span>
     </div>
 </body>
