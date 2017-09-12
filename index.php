@@ -34,9 +34,9 @@
 </script>
 </head>
 <body>
-    <div class="time">
+    <div class="time digit">
     <script type="text/javascript">start();</script>
-    <p id="showtime"></p>
+    <span id="showtime"></span>
     </div>
 </body>
 
