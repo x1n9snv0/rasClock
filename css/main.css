@@ -20,16 +20,16 @@ body{
 .time{
     width: 480px;
     height: 320px;
-    position: absolute;
+    margin:0 auto;
+    position: relative;
+    top: 50%;
+    margin-top: -160px;
     text-align: center;
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;
 }
 #showtime{
-    margin: auto auto;
-    width: 440px;
-    height: 300px;
-    font-size: 97px;
+    margin: 0 auto;
+    font-size: 98px;
+    position: relative;
+    top: 50%;
+    margin-top: -49px;
 }
