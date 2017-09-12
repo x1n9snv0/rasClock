@@ -18,21 +18,16 @@ body{
     -webkit-font-smoothing: antialiased;
 }
 .time{
-    width: 480px;
-    height: 320px;
-    margin:0 auto;
+    width: 464px;
+    height: 304px;
+    margin: 8px auto;
     position: relative;
     top: 50%;
     text-align: center;
 }
-.digit{
-    font-size: 98px;
-    position: relative;
-    top: 50%;
-}
 #showtime{
     margin: 0 auto;
     position: relative;
-    top: 50%;
+    top: 30%;
 
 }
