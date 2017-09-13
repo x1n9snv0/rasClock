@@ -30,7 +30,7 @@ body{
 }
 .time_and_weather{
     width: 378px;
-    height: 100px;
+    height: 122px;
     position: absolute;
     top: 40px;
     left: 43px;
@@ -48,6 +48,12 @@ body{
     margin: 24px auto auto 4px;
     float: left;
     font-size: 48px;
+}
+.weather{
+    height:60px;
+    margin: 10px auto auto 4px;
+    float: left;
+    font-size: 58px;
 }
 #showtime{
     margin: 0 auto;

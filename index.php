@@ -39,6 +39,7 @@
         <div class="time_and_weather">
             <div class="hhmm" id="hhmm">19:48</div>
             <div class="ss" id="ss">37</div>
+            <div class="weather" id="weather">多云转晴</div>
         </div>
     </div>
 </body>
