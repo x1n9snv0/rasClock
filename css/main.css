@@ -33,13 +33,16 @@ body{
 .time_and_weather{
     width: 378px;
     height: 98px;
+    margin: 0px auto;
 }
 .hhmm{
+    height: 100px;
     margin: 60px 0px;
     float: left;
     font-size: 98px;
 }
 .ss{
+    height: 34px;
     margin: 60px auto auto 4px;
     float: left;
     font-size: 32px;
