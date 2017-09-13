@@ -30,12 +30,12 @@ body{
 .hhmmss{
     width: 378px;
     height: 122px；
-    margin: 32px 0px 0px 43px;
+    margin: 32px auto;
     float: left;
 }
 .hhmm{
     height: 122px;
-    margin: 0px;
+    margin: 50px auto;
     float: left;
     font-size: 120px;
 }
