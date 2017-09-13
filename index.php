@@ -26,7 +26,12 @@
     function callback(){
         if(xmlHttp.readyState == 4){
             if(xmlHttp.status == 200){
-                [Y, m, d, h, i, s] = xmlHttp.responseText.split(':');
+                Y = xmlHttp.responseText.split(':')[0];
+                m = xmlHttp.responseText.split(':')[1];
+                d = xmlHttp.responseText.split(':')[2];
+                h = xmlHttp.responseText.split(':')[3];
+                i = xmlHttp.responseText.split(':')[4];
+                s = xmlHttp.responseText.split(':')[5];
                 document.getElementById("hhmm").innerHTML = h + ":" + i;
                 document.getElementById("ss").innerHTML = s;
                 document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日"；
