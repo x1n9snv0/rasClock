@@ -35,6 +35,7 @@
                 document.getElementById("hhmm").innerHTML = h + ":" + i;
                 document.getElementById("ss").innerHTML = s;
                 document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日"；
+                document.getElementById("test").innerHTML = xmlHttp.responseText;
                 setTimeout("start()", 1000);
             }
         }
@@ -45,11 +46,12 @@
     <script type="text/javascript">start();</script>
     <div class="time_area">
         <div class="hhmmss">
-            <div class="hhmm" >23:26</div>
+            <div class="hhmm">23:16</div>
             <div class="ss" >19</div>
         </div>
         <div class="date" >2017年9月13日</div>
     </div>
+    <p id="test"></p>
 </body>
 
 

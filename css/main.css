@@ -29,8 +29,9 @@ body{
 }
 .hhmmss{
     width: 378px;
-    height: 122px;
+    height: 122px；
     margin: 32px 0px 0px 43px;
+    float: left;
 }
 .hhmm{
     height: 122px;
@@ -53,7 +54,7 @@ body{
 }
 .weather{
     height: 38px;
-    margin: 10px auto auto 4px;
+    margin: 10px auto auto 43px;
     float: left;
     font-size: 18px;
 }
