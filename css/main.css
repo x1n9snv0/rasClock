@@ -33,6 +33,8 @@ body{
     height: 100px;
     position: absolute;
     top: 60px;
+    left: auto;
+    right: auto;
     margin: 0px auto;
 }
 .hhmm{
