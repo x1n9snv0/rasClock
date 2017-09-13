@@ -33,10 +33,9 @@ body{
 .time_and_weather{
     width: 378px;
     height: 98px;
-    margin: 60px auto;
 }
 .hhmm{
-    margin: 60px auto;
+    margin: 60px 0px;
     float: left;
     font-size: 98px;
 }
