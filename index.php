@@ -36,7 +36,7 @@
 <body>
     <div class="time">
     <script type="text/javascript">start();</script>
-    <span id="showtime"></span>
+    <span class="day" id="showtime"></span>
     </div>
 </body>
 
