@@ -34,9 +34,12 @@
 </script>
 </head>
 <body>
-    <div class="time">
     <script type="text/javascript">start();</script>
-    <span class="day" id="showtime"></span>
+    <div class="time_area">
+        <div class="time_and_weather">
+            <div class="hhmm" id="hhmm">19:48</div>
+            <div class="ss" id="ss">37</div>
+        </div>
     </div>
 </body>
 
