@@ -28,7 +28,7 @@ body{
     padding: 0px;
     margin: 8px auto;
 }
-.time_and_weather{
+.hhmmss{
     width: 378px;
     height: 122px;
     position: absolute;

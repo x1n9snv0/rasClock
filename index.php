@@ -26,7 +26,11 @@
     function callback(){
         if(xmlHttp.readyState == 4){
             if(xmlHttp.status == 200){
-                document.getElementById("showtime").innerHTML = xmlHttp.responseText;
+                h = xmlHttp.responseText.split(':')[0];
+                m = xmlHttp.responseText.split(':')[1];
+                s = xmlHttp.responseText.split(':')[2];
+                document.getElementById("hhmm").innerHTML = h + ":" + m;
+                document.getElementById("ss").innerHTML = s;
                 setTimeout("start()",1000);
             }
         }
@@ -36,10 +40,9 @@
 <body>
     <script type="text/javascript">start();</script>
     <div class="time_area">
-        <div class="time_and_weather">
-            <div class="hhmm" id="hhmm">19:48</div>
-            <div class="ss" id="ss">37</div>
-            <div class="weather" id="weather">多云转晴</div>
+        <div class="hhmmss">
+            <div class="hhmm" id="hhmm"></div>
+            <div class="ss" id="ss"></div>
         </div>
     </div>
 </body>
