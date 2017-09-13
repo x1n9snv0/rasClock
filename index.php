@@ -46,12 +46,12 @@
     <script type="text/javascript">start();</script>
     <div class="time_area">
         <div class="hhmmss">
-            <div class="hhmm">23:16</div>
-            <div class="ss" >19</div>
+            <div class="hhmm" id="hhmm">23:16</div>
+            <div class="ss" id="ss">19</div>
         </div>
-        <div class="date" >2017年9月13日</div>
+        <div class="date" id="date">2017年9月13日</div>
     </div>
-    <p id="test"></p>
+    <span id="test"></span>
 </body>
 
 
