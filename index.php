@@ -26,12 +26,11 @@
     function callback(){
         if(xmlHttp.readyState == 4){
             if(xmlHttp.status == 200){
-                h = xmlHttp.responseText.split(':')[0];
-                m = xmlHttp.responseText.split(':')[1];
-                s = xmlHttp.responseText.split(':')[2];
-                document.getElementById("hhmm").innerHTML = h + ":" + m;
+                [Y, m, d, h, i, s] = xmlHttp.responseText.split(':');
+                document.getElementById("hhmm").innerHTML = h + ":" + i;
                 document.getElementById("ss").innerHTML = s;
-                setTimeout("start()",1000);
+                document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日"；
+                setTimeout("start()",200);
             }
         }
     }
@@ -44,6 +43,7 @@
             <div class="hhmm" id="hhmm"></div>
             <div class="ss" id="ss"></div>
         </div>
+        <div class="date" id="date"></div>
     </div>
 </body>
 

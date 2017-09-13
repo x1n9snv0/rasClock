@@ -25,17 +25,12 @@ body{
 .time_area{
     width: 464px;
     height: 304px;
-    padding: 0px;
     margin: 8px auto;
 }
 .hhmmss{
     width: 378px;
     height: 122px;
-    position: absolute;
-    top: 40px;
-    left: 43px;
-    right: 43px;
-    margin: 0px auto;
+    margin: 32px 0px 0px 43px;
 }
 .hhmm{
     height: 122px;
@@ -45,7 +40,14 @@ body{
 }
 .ss{
     height: 50px;
-    margin: 24px auto auto 4px;
+    margin: 56px auto auto 4px;
+    float: left;
+    font-size: 48px;
+}
+.date{
+    width: 378px;
+    height: 50px;
+    margin: 8px 0px 0px 0px;
     float: left;
     font-size: 48px;
 }
