@@ -45,10 +45,10 @@
     <script type="text/javascript">start();</script>
     <div class="time_area">
         <div class="hhmmss">
-            <div class="hhmm" id="hhmm"></div>
-            <div class="ss" id="ss"></div>
+            <div class="hhmm" >23:26</div>
+            <div class="ss" >19</div>
         </div>
-        <div class="date" id="date"></div>
+        <div class="date" >2017年9月13日</div>
     </div>
 </body>
 
