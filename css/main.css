@@ -27,13 +27,12 @@ body{
     height: 304px;
     padding: 0px;
     margin: 8px auto;
-    top: 50%;
-    text-align: center;
 }
 .time_and_weather{
     width: 378px;
     height: 100px;
-    margin: 60px auto;
+    top: 60px;
+    margin: 0px auto;
 }
 .hhmm{
     height: 100px;
