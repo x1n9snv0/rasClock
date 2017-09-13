@@ -35,7 +35,7 @@
                 document.getElementById("hhmm").innerHTML = h + ":" + i;
                 document.getElementById("ss").innerHTML = s;
                 document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日"；
-                setTimeout("start()",200);
+                setTimeout("start()", 1000);
             }
         }
     }
