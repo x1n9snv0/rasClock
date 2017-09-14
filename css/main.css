@@ -33,10 +33,13 @@ body{
     margin: 0px auto;
 }
 .hhmm{
+    width: 304px;
+    height: 122px;
     float: left;
     font-size: 120px;
 }
 .ss{
+    width: 54px;
     height: 50px;
     margin: 56px auto auto 4px;
     float: left;
