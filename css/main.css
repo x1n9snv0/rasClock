@@ -29,13 +29,13 @@ body{
 }
 .hhmmss{
     width: 378px;
-    height: 130px;
+    height: 158px;
     margin: 0px auto;
 }
 .hhmm{
     width: 304px;
     height: 122px;
-    margin: 40px 0px 0px 0px;
+    margin: 36px 0px 0px 0px;
     float: left;
     font-size: 120px;
 }
