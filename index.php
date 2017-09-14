@@ -11,11 +11,11 @@
             xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
         else if(window.XMLHttpRequest){
-        xmlHttp = new XMLHttpRequest();
+            xmlHttp = new XMLHttpRequest();
         }
     }
 
-    function start(){
+    function driver(){
         createXMLHttpRequest();
         var url="getTime.php";
         xmlHttp.open("GET",url,true);
@@ -61,14 +61,14 @@
                 document.getElementById("hhmm").innerHTML = h + ":" + i;
                 document.getElementById("ss").innerHTML = s;
                 document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日 星期" + N;
-                setTimeout("start()", 1000);
+                setTimeout("driver()", 1000);
             }
         }
     }
 </script>
 </head>
 <body>
-    <script type="text/javascript">start();</script>
+    <script type="text/javascript">driver();</script>
     <div class="time_area">
         <div class="hhmmss">
             <div class="hhmm" id="hhmm">23:16</div>

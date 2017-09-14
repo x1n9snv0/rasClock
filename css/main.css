@@ -35,7 +35,7 @@ body{
 .hhmm{
     width: 304px;
     height: 122px;
-    margin: 36px 0px 0px 0px;
+    margin: 36px 0px 0px 12px;
     float: left;
     font-size: 120px;
 }
@@ -49,7 +49,7 @@ body{
 .date{
     width: 378px;
     height: 50px;
-    margin: 8px auto 0px 43px;
+    margin: 8px auto 0px 64px;
     float: left;
     font-size: 32px;
 }
