@@ -29,14 +29,15 @@
                 Y = xmlHttp.responseText.split(':')[0];
                 m = xmlHttp.responseText.split(':')[1];
                 d = xmlHttp.responseText.split(':')[2];
-                h = xmlHttp.responseText.split(':')[3];
-                i = xmlHttp.responseText.split(':')[4];
-                s = xmlHttp.responseText.split(':')[5];
+                N = xmlHttp.responseText.split(':')[3];
+                h = xmlHttp.responseText.split(':')[4];
+                i = xmlHttp.responseText.split(':')[5];
+                s = xmlHttp.responseText.split(':')[6];
                 document.getElementById("hhmm").innerHTML = h + ":" + i;
                 document.getElementById("ss").innerHTML = s;
-                document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日";
+                document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日 星期" + N;
                 document.getElementById("test").innerHTML = xmlHttp.responseText;
-                setTimeout("start()", 200);
+                setTimeout("start()", 1000);
             }
         }
     }
