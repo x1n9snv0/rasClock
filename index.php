@@ -31,25 +31,25 @@
                 d = xmlHttp.responseText.split(':')[2];
                 N = xmlHttp.responseText.split(':')[3];
                 switch(N){
-                    case 1:
+                    case "1":
                         N = "一";
                         break;
-                    case 2:
+                    case "2":
                         N = "二";
                         break;
-                    case 3:
+                    case "3":
                         N = "三";
                         break;
-                    case 4:
+                    case "4":
                         N = "四";
                         break;
-                    case 5:
+                    case "5":
                         N = "五";
                         break;
-                    case 6:
+                    case "6":
                         N = "六";
                         break;
-                    case 7:
+                    case "7":
                         N = "天";
                         break;
                     default:
