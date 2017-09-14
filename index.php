@@ -30,13 +30,37 @@
                 m = xmlHttp.responseText.split(':')[1];
                 d = xmlHttp.responseText.split(':')[2];
                 N = xmlHttp.responseText.split(':')[3];
+                switch(N){
+                    case 1:
+                        N = "一";
+                        break;
+                    case 2:
+                        N = "二";
+                        break;
+                    case 3:
+                        N = "三";
+                        break;
+                    case 4:
+                        N = "四";
+                        break;
+                    case 5:
+                        N = "五";
+                        break;
+                    case 6:
+                        N = "六";
+                        break;
+                    case 7:
+                        N = "天";
+                        break;
+                    default:
+                        N = "一"
+                }
                 h = xmlHttp.responseText.split(':')[4];
                 i = xmlHttp.responseText.split(':')[5];
                 s = xmlHttp.responseText.split(':')[6];
                 document.getElementById("hhmm").innerHTML = h + ":" + i;
                 document.getElementById("ss").innerHTML = s;
                 document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日 星期" + N;
-                document.getElementById("test").innerHTML = xmlHttp.responseText;
                 setTimeout("start()", 1000);
             }
         }
@@ -52,7 +76,6 @@
         </div>
         <div class="date" id="date">2017年9月13日</div>
     </div>
-    <span id="test"></span>
 </body>
 
 
