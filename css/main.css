@@ -48,9 +48,9 @@ body{
 .date{
     width: 378px;
     height: 50px;
-    margin: 8px auto 0px auto;
+    margin: 8px auto 0px 43px;
     float: left;
-    font-size: 48px;
+    font-size: 32px;
 }
 .weather{
     height: 38px;
