@@ -106,10 +106,10 @@ body{
     font-size: 30px;
 }
 #vi{
-    width: 95px;
+    width: 80px;
     height: 20px;
     float: left;
-    margin: 0px 5px 0px 5px;
+    margin: 0px 5px;
     font-size: 18px;
 }
 .rs{
@@ -124,7 +124,7 @@ body{
     height: 20px;
     float: left;
     margin: 0px 3px 0px 0px;
-    font-size: 12px;
+    font-size: 16px;
 }
 .r_s{
     width: 44px;

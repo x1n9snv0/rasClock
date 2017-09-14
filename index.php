@@ -87,7 +87,7 @@
                 <div id="lt">16&#176;</div>
             </div>
             <div id="su">多云转晴</div>
-            <div id="vi">可见:1000m</div>
+            <div id="vi">V:1000m</div>
             <div class="rs">
                 <div class="rise_set"><i class="wi wi-sunrise"></i></div>
                 <div class="r_s" id="s_r">06:01</div>
