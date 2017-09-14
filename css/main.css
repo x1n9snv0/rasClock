@@ -32,36 +32,92 @@ body{
     height: 142px;
     margin: 0px auto;
 }
-.hhmm{
+#hhmm{
     width: 304px;
     height: 122px;
     margin: 20px 0px 0px 12px;
     float: left;
     font-size: 120px;
 }
-.ss{
+#ss{
     width: 54px;
     height: 50px;
     margin: 40px auto auto 4px;
     float: left;
     font-size: 48px;
 }
-.date{
-    width: 378px;
+#date{
+    width: 334px;
     height: 36px;
-    margin: 8px auto 0px 64px;
+    margin: 8px 44px 0px 64px;
     float: left;
     font-size: 32px;
 }
 .weather{
-    height: 38px;
-    margin: 10px auto auto 43px;
+    width: 336px;
+    height: 90px;
+    margin: 64px 64px 0px 0px;
+    padding: 9px 0px 0px 9px;
     float: left;
+}
+#wi{
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+#ct{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin: 0px 10px;
+    font-size: 48px;
+}
+#ht{
+    width: 30px;
+    height: 14px;
+    float: left;
+    margin: 0px 5px 3px 0px;
+    font-size: 12px
+}
+#hu{
+    width: 30px;
+    height: 16px;
+    float: left;
+    margin: 0px 5px 0px 0px;
+    font-size: 12px
+}
+#lt{
+    width: 30px;
+    height: 14px;
+    float: left;
+    margin: 3px 5px 0px 0px;
+    font-size: 12px
+}
+#su{
+    width: 130px;
+    height: 50px;
+    float: left;
+    margin: 0px 3px;
+    font-size: 36px;
+}
+#vi{
+    width: 85px;
+    height: 20px;
+    float: left;
+    margin: 6px 5px 0px 10px;
     font-size: 18px;
 }
-#showtime{
-    margin: 0 auto;
-    position: relative;
-    top: 25%;
-    font-size: 98px;
+#rs{
+    width: 130px;
+    height: 20px;
+    float: left;
+    margin: 0px 3px;
+    font-size: 18px;
+}
+#tip{
+    width: 220px;
+    height: 20px;
+    float: left;
+    margin: 4px 6px 0px 10px;
+    font-size: 18px;
 }
