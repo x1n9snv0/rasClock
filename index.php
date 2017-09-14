@@ -36,7 +36,7 @@
                 document.getElementById("ss").innerHTML = s;
                 document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日";
                 document.getElementById("test").innerHTML = xmlHttp.responseText;
-                setTimeout("start()", 1000);
+                setTimeout("start()", 200);
             }
         }
     }
