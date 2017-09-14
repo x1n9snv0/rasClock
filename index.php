@@ -79,14 +79,14 @@
         </div>
         <div id="date">2017年9月13日</div>
         <div class="weather">
-            <div id="wi"><i class="wi wi-night-sleet"></i></div> //天气图标
-            <div id="ct">26&#176;</div> //当前温度
-            <div id="ht">28&#176;</div> //最高温度
-            <div id="hu">35%</div> //湿度
-            <div id="lt"><16&#176;/div> //最低温度
-            <div id="su">多云转晴</div> //天气总述
-            <div id="vi">1000m</div> //能见度
-            <div id="rs">R: 06:03 S: 18:17</div> //日出日落
+            <div id="wi"><i class="wi wi-night-sleet"></i></div>
+            <div id="ct">26&#176;</div>
+            <div id="ht">28&#176;</div>
+            <div id="hu">35%</div>
+            <div id="lt"><16&#176;/div>
+            <div id="su">多云转晴</div>
+            <div id="vi">1000m</div>
+            <div id="rs">R: 06:03 S: 18:17</div>
         </div>
     </div>
 </body>
