@@ -88,7 +88,7 @@
             </div>
             <div id="su">多云转晴</div>
             <div id="vi">1000m</div>
-            <div id="rs">R: 06:03 S: 18:17</div>
+            <div id="rs">R 06:03 S 18:17</div>
         </div>
     </div>
 </body>
