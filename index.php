@@ -95,7 +95,7 @@
                 <div class="r_s" id="s_s">18:17</div>
             </div>
 
-            <div id="tip">车车儿亲爱的早点睡觉噢</div>
+            <div id="tip">车车儿亲爱的早点睡觉哈哈</div>
         </div>
     </div>
 </body>
