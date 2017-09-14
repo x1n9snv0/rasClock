@@ -29,26 +29,26 @@ body{
 }
 .hhmmss{
     width: 378px;
-    height: 158px;
+    height: 142px;
     margin: 0px auto;
 }
 .hhmm{
     width: 304px;
     height: 122px;
-    margin: 36px 0px 0px 12px;
+    margin: 20px 0px 0px 12px;
     float: left;
     font-size: 120px;
 }
 .ss{
     width: 54px;
     height: 50px;
-    margin: 56px auto auto 4px;
+    margin: 40px auto auto 4px;
     float: left;
     font-size: 48px;
 }
 .date{
     width: 378px;
-    height: 50px;
+    height: 34px;
     margin: 8px auto 0px 64px;
     float: left;
     font-size: 32px;

@@ -3,7 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/weather-icons.css">
 <title>rasClock</title>
+
 <script type="text/javascript">
     var xmlHttp;
     function createXMLHttpRequest(){
@@ -66,6 +68,7 @@
         }
     }
 </script>
+
 </head>
 <body>
     <script type="text/javascript">driver();</script>
