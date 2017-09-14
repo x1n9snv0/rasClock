@@ -83,7 +83,7 @@
             <div id="ct">26&#176;</div>
             <div id="ht">28&#176;</div>
             <div id="hu">35%</div>
-            <div id="lt"><16&#176;/div>
+            <div id="lt">16&#176;</div>
             <div id="su">多云转晴</div>
             <div id="vi">1000m</div>
             <div id="rs">R: 06:03 S: 18:17</div>

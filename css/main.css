@@ -56,7 +56,7 @@ body{
 .weather{
     width: 336px;
     height: 90px;
-    margin: 64px 64px 0px 0px;
+    margin: 0px 64px;
     padding: 9px 0px 0px 9px;
     float: left;
 }
@@ -64,6 +64,7 @@ body{
     width: 100px;
     height: 100px;
     float: left;
+    font-size: 100px:
 }
 #ct{
     width: 50px;
@@ -72,25 +73,28 @@ body{
     margin: 0px 10px;
     font-size: 48px;
 }
+.tem_hum{
+    width: 30px;
+    height: 50px;
+    float: left;
+    margin: 0px 5px;
+}
 #ht{
     width: 30px;
     height: 14px;
-    float: left;
-    margin: 0px 5px 3px 0px;
+    margin: 0px 0px 3px 0px;
     font-size: 12px
 }
 #hu{
     width: 30px;
     height: 16px;
-    float: left;
-    margin: 0px 5px 0px 0px;
+    margin: 0px;
     font-size: 12px
 }
 #lt{
     width: 30px;
     height: 14px;
-    float: left;
-    margin: 3px 5px 0px 0px;
+    margin: 3px 0px 0px 0px;
     font-size: 12px
 }
 #su{
