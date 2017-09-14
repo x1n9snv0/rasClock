@@ -87,8 +87,15 @@
                 <div id="lt">16&#176;</div>
             </div>
             <div id="su">多云转晴</div>
-            <div id="vi">1000m</div>
-            <div id="rs">R 06:03 S 18:17</div>
+            <div id="vi">可见: 1000m</div>
+            <div class="rs">
+                <div class="rise_set"><i class="wi wi-sunrise"></i></div>
+                <div class="r_s" id="sr">06:01</div>
+                <div class="rise_set"><i class="wi wi-sunset"></i></div>
+                <div class="r_s" id="ss">06:01</div>
+            </div>
+
+            <div id="tip">早点睡觉噢</div>
         </div>
     </div>
 </body>
