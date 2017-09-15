@@ -10,13 +10,14 @@ function getCityCode(name){
     })
 }
 var city = "Haidian";
+var code = getCityCode(city)
 var config = {
     weather: {
         apiVersion: '2.5',
         apiBase: 'http://api.openweathermap.org/data',
         apiEndpoint: 'weather',
         params: {
-            id: getCityCode(city),
+            id: code,
             lang: "zh_cn",
             APPID: "65d175733afd31e932183bca00bf018c",
             units: "metric",
