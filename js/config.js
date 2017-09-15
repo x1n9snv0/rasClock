@@ -5,7 +5,7 @@ var config = {
         apiBase: 'http://api.openweathermap.org/data',
         apiEndpoint: 'weather',
         params: {
-            id: getCityCode(weather.city),
+            id: getCityCode(config.weather.city),
             lang: "zh_cn",
             APPID: "65d175733afd31e932183bca00bf018c",
             units: "metric",
