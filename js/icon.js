@@ -177,4 +177,3 @@ var icon = {
     '906': 'wi-owm-night-906',
     '957': 'wi-owm-night-957'
 }
-
