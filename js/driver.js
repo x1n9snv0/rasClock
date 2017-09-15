@@ -55,6 +55,7 @@ function d_callback(){
             document.getElementById("ss").innerHTML = s;
             document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日 星期" + N;
             if (i=="29"){
+                weather.init()
                 weather.update()
             }
             setTimeout("driver()", 1000);
