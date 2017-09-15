@@ -55,7 +55,7 @@ weather.init = function(){
     $.get(
         "getCityCode.php?city=" + this.city,
         function(data){
-            if (data != NULL){
+            if (data != null){
                 weather.params.id = data;
             }
             else {

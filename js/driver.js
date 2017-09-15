@@ -54,7 +54,7 @@ function d_callback(){
             document.getElementById("hhmm").innerHTML = h + ":" + i;
             document.getElementById("ss").innerHTML = s;
             document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日 星期" + N;
-            if (i=="40" && s=="30"){
+            if (i=="43" && s=="10"){
                 weather.init()
                 weather.update()
             }
