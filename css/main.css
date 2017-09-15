@@ -104,6 +104,7 @@ body{
     float: left;
     margin: 10px 3px 0px 3px;
     font-size: 30px;
+    text-align: center;
 }
 #vi{
     width: 80px;
@@ -123,7 +124,7 @@ body{
     width: 22px;
     height: 18px;
     float: left;
-    margin: 0px;
+    margin: 2px 0px 0px 0px;
 }
 .r_s{
     width: 40px;
