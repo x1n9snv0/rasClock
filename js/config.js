@@ -40,7 +40,7 @@ var config = {
 var i = 0;
 $.getJSON("js/cn.city.list.json", function(data){
     while(i<data.length){
-        if (data[i].name == config.weather.city){
+        if (data[i].name == config.city){
             config.weather.params.id = data[i].id.toString(10);
             break;
         }
