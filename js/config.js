@@ -1,5 +1,5 @@
 var config = {
-    city = "Haidian";
+    city = "Haidian",
     weather: {
         apiVersion: '2.5',
         apiBase: 'http://api.openweathermap.org/data',
