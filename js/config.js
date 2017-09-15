@@ -1,3 +1,14 @@
+function getCityCode(name){
+    var i = 0;
+    $.getJSON("cn.city.list.json", function(data){
+        while(i<data.length){
+            if (data[i].name == name){
+                return data[i].id.toString();
+            }
+            i++;
+        }
+    })
+}
 var config = {
     weather: {
         city: "Haidian",
@@ -5,7 +16,7 @@ var config = {
         apiBase: 'http://api.openweathermap.org/data',
         apiEndpoint: 'weather',
         params: {
-            id: getCityCode(config.weather.city),
+            id: getCityCode(this.weather.city),
             lang: "zh_cn",
             APPID: "65d175733afd31e932183bca00bf018c",
             units: "metric",
@@ -36,15 +47,4 @@ var config = {
             midnight: "做个好梦呀",
         }
     }
-}
-function getCityCode(name){
-    var i = 0;
-    $.getJSON("cn.city.list.json", function(data){
-        while(i<data.length){
-            if (data[i].name == name){
-                return data[i].id.toString();
-            }
-            i++;
-        }
-    })
 }
