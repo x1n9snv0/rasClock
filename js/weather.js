@@ -44,7 +44,7 @@ weather.update = function(){
             else {
                 weather.params.id = "1816670";
             }
-        }
+        }.bind(this)
     );
     $.ajax({
         url: weather.apiBase + '/' + weather.apiVersion + '/' + weather.apiEndpoint,
@@ -61,18 +61,4 @@ weather.update = function(){
                 $(weather.sunset).text(format_rs(data.sys.sunset))
             }.bind(this),
     });
-}
-weather.init = function(){
-    $.get(
-        "getCityCode.php?city=" + this.city,
-        function(data){
-            if (data != null){
-                weather.params.id = data;
-            }
-            else {
-                weather.params.id = "1816670";
-            }
-        }
-    );
-    weather.update();
 }
