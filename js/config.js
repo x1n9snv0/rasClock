@@ -10,7 +10,7 @@ function getCityCode(name){
     })
 }
 var city = "Haidian";
-var code = getCityCode(city)
+var code = getCityCode(city);
 var config = {
     weather: {
         apiVersion: '2.5',
