@@ -28,7 +28,7 @@ weather.roundValue = function (temperature) {
  * @return {string} hh:mm like 18:30
 */
 function format_rs(ut){
-    var time = new Date(parseInt(ut));
+    var time = new Date(parseInt(ut * 1000));
     var h = time.getHours();
     var m = time.getMinutes();
     return h + ':' + m;
