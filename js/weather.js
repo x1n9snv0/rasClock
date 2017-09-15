@@ -35,6 +35,17 @@ function format_rs(ut){
 }
 
 weather.update = function(){
+    $.get(
+        "getCityCode.php?city=" + this.city,
+        function(data){
+            if (data != null){
+                weather.params.id = data;
+            }
+            else {
+                weather.params.id = "1816670";
+            }
+        }
+    );
     $.ajax({
         url: weather.apiBase + '/' + weather.apiVersion + '/' + weather.apiEndpoint,
         data: weather.params,
