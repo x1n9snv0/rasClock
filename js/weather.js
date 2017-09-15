@@ -4,15 +4,15 @@ var weather = {
     apiVersion: config.weather.apiVersion,
     apiBase: config.weather.apiBase,
     apiEndpoint: config.weather.apiEndpoint,
-    weather_icon = '#wi',
-    current_temp = '#ct',
-    high_temp = '#ht',
-    humidity = '#hu',
-    low_temp = '#lt',
-    weather_sum = '#su',
-    visibility = '#vi',
-    sunrise = '#s_r',
-    sunset = '#s_s'
+    weather_icon = "#wi",
+    current_temp = "#ct",
+    high_temp = "#ht",
+    humidity = "#hu",
+    low_temp = "#lt",
+    weather_sum = "#su",
+    visibility = "#vi",
+    sunrise = "#s_r",
+    sunset = "#s_s"
 }
 /**
  * Rounds a float to one decimal place
