@@ -1,22 +1,11 @@
-var city = "Haidian";
-var code;
-var i = 0;
-$.getJSON("js/cn.city.list.json", function(data){
-    while(i<data.length){
-        if (data[i].name == city){
-            code = data[i].id;
-            break;
-        }
-        i++;
-    }
-}).bind(this);
 var config = {
+    city = "Haidian";
     weather: {
         apiVersion: '2.5',
         apiBase: 'http://api.openweathermap.org/data',
         apiEndpoint: 'weather',
         params: {
-            id: code,
+            id: "",
             lang: "zh_cn",
             APPID: "65d175733afd31e932183bca00bf018c",
             units: "metric",
@@ -48,3 +37,13 @@ var config = {
         }
     }
 }
+var i = 0;
+$.getJSON("js/cn.city.list.json", function(data){
+    while(i<data.length){
+        if (data[i].name == config.weather.city){
+            config.weather.params.id = data[i].id.toString(10);
+            break;
+        }
+        i++;
+    }
+});
