@@ -39,7 +39,7 @@ weather.update = function(){
         url: weather.apiBase + '/' + weather.apiVersion + '/' + weather.apiEndpoint,
         data: weather.params,
         success: function(data){
-                $(weather.weather_icon).css("wi " + icon(data.weather.id));
+                $(weather.weather_icon).css("wi " + icon[data.weather.id]);
                 $(weather.current_temp).text(weather.roundValue(data.main.temp) + "&#176;");
                 $(weather.high_temp).text(weather.roundValue(data.main.temp_max) + "&#176;");
                 $(weather.humidity).text(weather.roundValue(data.main.humidity) + "%");
