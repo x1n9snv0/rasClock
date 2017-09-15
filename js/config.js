@@ -1,11 +1,10 @@
 function getCityCode(name){
     var i = 0;
     var id_out;
-    $.getJSON("js/cn.city.list.json", function(data){
+    $.getJSON("js/cn.city.list.json", id_out = function(data){
         while(i<data.length){
             if (data[i].name == name){
-                id_out = data[i].id;
-                break;
+                return data[i].id;
             }
             i++;
         }
