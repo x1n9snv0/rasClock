@@ -20,7 +20,7 @@
         </div>
         <div id="date">2017年9月13日</div>
         <div class="weather">
-            <div class="wi"><i id="wi" class="wi wi-night-sleet"></i></div>
+            <div class="wic"><i id="wc" class="wi wi-night-sleet"></i></div>
             <div id="ct">26&#176;</div>
             <div class="tem_hum">
                 <div id="ht">28&#176;</div>

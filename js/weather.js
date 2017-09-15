@@ -4,15 +4,15 @@ var weather = {
     apiVersion: config.weather.apiVersion,
     apiBase: config.weather.apiBase,
     apiEndpoint: config.weather.apiEndpoint,
-    weather_icon = "#wi",
-    current_temp = "#ct",
-    high_temp = "#ht",
-    humidity = "#hu",
-    low_temp = "#lt",
-    weather_sum = "#su",
-    visibility = "#vi",
-    sunrise = "#s_r",
-    sunset = "#s_s"
+    weather_icon: "#wc",
+    current_temp: "#ct",
+    high_temp: "#ht",
+    humidity: "#hu",
+    low_temp: "#lt",
+    weather_sum: "#su",
+    visibility: "#vi",
+    sunrise: "#s_r",
+    sunset: "#s_s"
 }
 /**
  * Rounds a float to one decimal place
@@ -39,7 +39,7 @@ weather.update = function(){
         url: weather.apiBase + '/' + weather.apiVersion + '/' + weather.apiEndpoint,
         data: weather.params,
         success: function(data){
-                $(weather.weather_icon).css(icon(data.weather.id));
+                $(weather.weather_icon).css("wi " + icon(data.weather.id));
                 $(weather.current_temp).text(this.roundValue(data.main.temp) + "&#176;");
                 $(weather.high_temp).text(this.roundValue(data.main.temp_max) + "&#176;");
                 $(weather.humidity).text(this.roundValue(data.main.humidity) + "%");
