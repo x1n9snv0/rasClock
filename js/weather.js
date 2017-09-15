@@ -49,7 +49,6 @@ weather.update = function(){
                 $(weather.sunrise).text(format_rs(data.sys.sunrise))
                 $(weather.sunset).text(format_rs(data.sys.sunset))
             }.bind(this),
-        dataType: json
     });
 }
 weather.init = function(){
