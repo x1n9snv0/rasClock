@@ -22,7 +22,7 @@ var config = {
             evening: "记得做运动",
             sleep: "该睡觉啦 记得打卡",
             night: "媳妇儿晚安"
-            midnight: "梦到我了嘛"
+            midnight: "梦到我了嘛",
         },
         weekend: {
             morning: "早安宝贝儿",
@@ -33,7 +33,7 @@ var config = {
             evening: "记得做运动",
             sleep: "该睡觉啦 记得打卡",
             night: "媳妇儿晚安",
-            midnight: "做个好梦呀"
+            midnight: "做个好梦呀",
         }
 
     }
