@@ -9,7 +9,7 @@ $.getJSON("js/cn.city.list.json", function(data){
         }
         i++;
     }
-});
+}).bind(this);
 var config = {
     weather: {
         apiVersion: '2.5',
