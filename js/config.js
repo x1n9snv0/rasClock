@@ -1,20 +1,15 @@
-
-function getCityCode(name){
-    var i = 0;
-    var id_out;
-    $.getJSON("js/cn.city.list.json", function(data){
-        while(i<data.length){
-            if (data[i].name == name){
-                id_out = data[i].id;
-                break;
-            }
-            i++;
-        }
-    });
-    return id_out;
-}
 var city = "Haidian";
-var code = getCityCode(city);
+var code;
+var i = 0;
+$.getJSON("js/cn.city.list.json", function(data){
+    while(i<data.length){
+        if (data[i].name == name){
+            code = data[i].id;
+            break;
+        }
+        i++;
+    }
+});
 var config = {
     weather: {
         apiVersion: '2.5',
