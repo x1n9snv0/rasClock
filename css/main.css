@@ -106,7 +106,7 @@ body{
     font-size: 30px;
 }
 #vi{
-    width: 65px;
+    width: 80px;
     height: 20px;
     float: left;
     margin: 0px 5px 0px 5px;
@@ -116,8 +116,8 @@ body{
     width: 135px;
     height: 20px;
     float: left;
-    margin: 0px 0px 0px 20px;
-    font-size: 18px;
+    margin: 0px 0px 0px 5px;
+    font-size: 16px;
 }
 .rise_set{
     width: 22px;
