@@ -56,10 +56,10 @@ weather.init = function(){
         "getCityCode.php?city=" + this.city,
         function(data){
             if (data != NULL){
-                this.params.id = data;
+                weather.params.id = data;
             }
             else {
-                this.params.id = "1816670";
+                weather.params.id = "1816670";
             }
         }
     );
