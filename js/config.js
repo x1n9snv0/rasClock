@@ -3,7 +3,7 @@ function getCityCode(name){
     $.getJSON("js/cn.city.list.json", function(data){
         while(i<data.length){
             if (data[i].name == name){
-                return data[i].id.toString();
+                return data[i].id.toString(10);
             }
             i++;
         }
