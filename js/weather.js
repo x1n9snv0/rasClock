@@ -20,7 +20,7 @@ var weather = {
  * @return {float}             The new floating point value
  */
 weather.roundValue = function (temperature) {
-	return parseFloat(temperature).toFixed(1);
+	return parseFloat(temperature).toFixed();
 }
 /*
  * format unix time to hh:mm
@@ -31,7 +31,7 @@ function format_rs(ut){
     var time = new Date(parseInt(ut));
     var h = time.getHours();
     var m = time.getMinutes();
-    return add0(h) + ':' + add0(m);
+    return h + ':' + m;
 }
 
 weather.update = function(){
@@ -39,12 +39,12 @@ weather.update = function(){
         url: weather.apiBase + '/' + weather.apiVersion + '/' + weather.apiEndpoint,
         data: weather.params,
         success: function(data){
-                $(weather.weather_icon).css("wi " + icon[data.weather.id]);
-                $(weather.current_temp).text(weather.roundValue(data.main.temp) + "&#176;");
-                $(weather.high_temp).text(weather.roundValue(data.main.temp_max) + "&#176;");
+                $(weather.weather_icon).css("wi " + icon[data.weather[0].id]);
+                $(weather.current_temp).text(weather.roundValue(data.main.temp) + &#176;);
+                $(weather.high_temp).text(weather.roundValue(data.main.temp_max) + &#176;);
                 $(weather.humidity).text(weather.roundValue(data.main.humidity) + "%");
-                $(weather.low_temp).text(weather.roundValue(data.main.temp_min) + "&#176;");
-                $(weather.weather_sum).text(data.weather.description);
+                $(weather.low_temp).text(weather.roundValue(data.main.temp_min) + &#176;);
+                $(weather.weather_sum).text(data.weather[0].description);
                 $(weather.visibility).text("V:" + data.visibility + "m")
                 $(weather.sunrise).text(format_rs(data.sys.sunrise))
                 $(weather.sunset).text(format_rs(data.sys.sunset))
