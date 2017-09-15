@@ -1,5 +1,5 @@
 var weather = {
-    city: config.weather.city,
+    city: config.city,
     params: config.weather.params,
     apiVersion: config.weather.apiVersion,
     apiBase: config.weather.apiBase,
