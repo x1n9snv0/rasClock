@@ -5,6 +5,7 @@ var config = {
         apiBase: 'http://api.openweathermap.org/data',
         apiEndpoint: 'weather',
         params: {
+            id: getCityCode(city),
             lang: "zh_cn",
             APPID: "65d175733afd31e932183bca00bf018c",
             units: "metric",
@@ -34,6 +35,16 @@ var config = {
             night: "媳妇儿晚安",
             midnight: "做个好梦呀",
         }
-
     }
+}
+function getCityCode(name){
+    var i = 0;
+    $.getJSON("cn.city.list.json", function(data){
+        while(i<data.length){
+            if (data[i].name == name){
+                return data[i].id.toString();
+            }
+            i++;
+        }
+    })
 }

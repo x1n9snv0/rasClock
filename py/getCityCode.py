@@ -17,7 +17,7 @@ for city in city_info:
         desire_city.append(city)
     else:
         pass
-cj = open('../js/[].city.list.json'.format(code.lower()), 'wb')
-json.dump(desire_city, cj)
+cj = open('js/{}.city.list.json'.format(code.lower()), 'wb')
+json.dump(desire_city, cj, indent=4)
 jf.close()
 cj.close()
