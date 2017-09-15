@@ -109,27 +109,26 @@ body{
     width: 65px;
     height: 20px;
     float: left;
-    margin: 0px 5px 0px 20px;
+    margin: 0px 5px 0px 5px;
     font-size: 18px;
 }
-#rs{
+.rs{
     width: 130px;
     height: 20px;
     float: left;
     margin: 0px 0px 0px 16px;
-    font-size: 18px;
 }
 .rise_set{
     width: 18px;
     height: 20px;
     float: left;
     margin: 2px 3px 0px 0px;
-    font-size: 16px;
 }
 .r_s{
-    width: 44px;
+    width: 40px;
     height: 20px;
     float: left;
+    font-size: 18px;
 }
 #tip{
     width: 220px;
