@@ -3,7 +3,7 @@ var code;
 var i = 0;
 $.getJSON("js/cn.city.list.json", function(data){
     while(i<data.length){
-        if (data[i].name == name){
+        if (data[i].name == city){
             code = data[i].id;
             break;
         }
