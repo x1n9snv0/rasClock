@@ -21,7 +21,7 @@ var config = {
             dinner: "可以吃点水果哟",
             evening: "记得做运动",
             sleep: "该睡觉啦 记得打卡",
-            night: "媳妇儿晚安"
+            night: "媳妇儿晚安",
             midnight: "梦到我了嘛",
         },
         weekend: {

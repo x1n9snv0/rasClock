@@ -4,7 +4,7 @@ var weather = {
     apiVersion: config.weather.apiVersion,
     apiBase: config.weather.apiBase,
     apiEndpoint: config.weather.apiEndpoint,
-    weather_icon = 'i#wi',
+    weather_icon = '#wi',
     current_temp = '#ct',
     high_temp = '#ht',
     humidity = '#hu',
