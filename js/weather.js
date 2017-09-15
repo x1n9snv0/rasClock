@@ -40,10 +40,10 @@ weather.update = function(){
         data: weather.params,
         success: function(data){
                 $(weather.weather_icon).css("wi " + icon(data.weather.id));
-                $(weather.current_temp).text(this.roundValue(data.main.temp) + "&#176;");
-                $(weather.high_temp).text(this.roundValue(data.main.temp_max) + "&#176;");
-                $(weather.humidity).text(this.roundValue(data.main.humidity) + "%");
-                $(weather.low_temp).text(this.roundValue(data.main.temp_min) + "&#176;");
+                $(weather.current_temp).text(weather.roundValue(data.main.temp) + "&#176;");
+                $(weather.high_temp).text(weather.roundValue(data.main.temp_max) + "&#176;");
+                $(weather.humidity).text(weather.roundValue(data.main.humidity) + "%");
+                $(weather.low_temp).text(weather.roundValue(data.main.temp_min) + "&#176;");
                 $(weather.weather_sum).text(data.weather.description);
                 $(weather.visibility).text("V:" + data.visibility + "m")
                 $(weather.sunrise).text(format_rs(data.sys.sunrise))
@@ -63,5 +63,5 @@ weather.init = function(){
             }
         }
     );
-    this.update();
+    weather.update();
 }
