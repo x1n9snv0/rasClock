@@ -24,30 +24,30 @@ var config = {
             units: "metric",
         },
     },
-//    sen_weather: {
-//        apiVersion: 'v3/',
-//        apiBase: 'https://api.seniverse.com/',
-//        nowEndpoint: 'weather/now.json',
-//        dailyEndpoint: 'weather/now.json',
-//        now_params: {
-//            location: '',
-//            ts: '',
-//            uid: '',
-//            sig: '',
-//            language: 'zh-Hans',
-//            unit: 'c',
-//        },
-//        daily_params: {
-//            location: '',
-//            ts: '',
-//            uid: '',
-//            sig: '',
-//            language: 'zh-Hans',
-//            unit: 'c',
-//            start: '0',
-//            days: '1',
-//        },
-//    },
+    sen_weather: {
+        apiVersion: 'v3/',
+        apiBase: 'https://api.seniverse.com/',
+        nowEndpoint: 'weather/now.json',
+        dailyEndpoint: 'weather/now.json',
+        now_params: {
+            location: '',
+            ts: '',
+            uid: '',
+            sig: '',
+            language: 'zh-Hans',
+            unit: 'c',
+        },
+        daily_params: {
+            location: '',
+            ts: '',
+            uid: '',
+            sig: '',
+            language: 'zh-Hans',
+            unit: 'c',
+            start: '0',
+            days: '1',
+        },
+    },
 //    sen_weather: {
 //        apiVersion: 'v3/',
 //        apiBase: 'https://api.seniverse.com/',
@@ -121,28 +121,29 @@ config.init = function(){
         }
         weather.now_update();
     });
-    //for seniverse.com
-//    var ts = Math.floor((new Date()).getTime() / 1000);
-//    var str = "ts=" + ts + "&uid=" + UID;
-//    var sig = CryptoJS.HmacSHA1(str, KEY).toString(CryptoJS.enc.Base64);
-//    sig = encodeURIComponent(sig);
-//    config.sen_weather.now_params.ts = ts;
-//    config.sen_weather.now_params.uid = UID;
-//    config.sen_weather.now_params.sig = sig;
-//    config.sen_weather.daily_params.ts = ts;
-//    config.sen_weather.daily_params.uid = UID;
-//    config.sen_weather.daily_params.sig = sig;
-//    $.getJSON("js/city.list.json", function(data){
-//        var i = 0;
-//        while(i<data.length){
-//            if (data[i].name == config.city){
-//                config.sen_weather.now_params.location = data[i].id.toString(10);
-//                config.sen_weather.daily_params.location = data[i].id.toString(10);
-//                break;
-//            }
-//            i++;
-//        }
-//    });
+    for seniverse.com
+    var ts = Math.floor((new Date()).getTime() / 1000);
+    var str = "ts=" + ts + "&uid=" + UID;
+    var sig = CryptoJS.HmacSHA1(str, KEY).toString(CryptoJS.enc.Base64);
+    sig = encodeURIComponent(sig);
+    config.sen_weather.now_params.ts = ts;
+    config.sen_weather.now_params.uid = UID;
+    config.sen_weather.now_params.sig = sig;
+    config.sen_weather.daily_params.ts = ts;
+    config.sen_weather.daily_params.uid = UID;
+    config.sen_weather.daily_params.sig = sig;
+    $.getJSON("js/city.list.json", function(data){
+        var i = 0;
+        while(i<data.length){
+            if (data[i].name == config.city){
+                config.sen_weather.now_params.location = data[i].id.toString(10);
+                config.sen_weather.daily_params.location = data[i].id.toString(10);
+                break;
+            }
+            i++;
+        }
+        weather.update_now;
+    });
     //for openweathermap.org
     $.getJSON("js/cn.city.list.json", function(data){
         var i = 0;
