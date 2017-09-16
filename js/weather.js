@@ -71,7 +71,7 @@ weather.update_now = function(){
             $(weather.current_temp).text(weather_now.temperature + "°");
 
         }
-    }
+    });
 }
 weather.update_daily = function(){
     $.ajax({
@@ -82,7 +82,7 @@ weather.update_daily = function(){
             $(weather.high_temp).text(weather_daily.high + "°");
             $(weather.low_temp).text(weather_daily.low + "°");
         }
-    }
+    });
 }
 weather.update_others = function(){
     $.ajax({
