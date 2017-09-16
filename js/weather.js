@@ -88,7 +88,7 @@ function fresh_bw(sunrise, sunset){
 //    });
 //}
 weather.now_update = function(){
-    $.getJson(
+    $.getJSON(
         weather.now.apiBase,
         weather.now.params,
         function(data){
