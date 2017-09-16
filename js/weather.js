@@ -50,30 +50,42 @@ function fresh_bw(sunrise, sunset){
         return;
     }
 }
-weather.update_now = function(){
-    $.ajax({
-        url: weather.sen.apiBase + weather.sen.apiVersion + weather.sen.nowEndpoint,
-        data: weather.sen.now_params,
-        dataType: 'JSONP',
-        success: function(data){
-            var weather_now = data.results[0].now;
-            if (weather_now.text.length <= 4){
-                $(weather.weather_sum).removeClass();
-                $(weather.weather_sum).addClass("normal");
-            }
-            if (weather_now.text.length > 4 && weather_summary.length < 7){
-                $(weather.weather_sum).removeClass();
-                $(weather.weather_sum).addClass("small");
-            }
-            if (weather_now.text.length >= 7){
-                $(weather.weather_sum).removeClass();
-                $(weather.weather_sum).addClass("little");
-            }
-            $(weather.weather_sum).text(weather_now.text);
-            $(weather.current_temp).text(weather_now.temperature + "°");
-
-        }
-    });
+//weather.update_now = function(){
+//    $.ajax({
+//        url: weather.sen.apiBase + weather.sen.apiVersion + weather.sen.nowEndpoint,
+//        data: weather.sen.now_params,
+//        dataType: 'JSONP',
+//        success: function(data){
+//            var weather_now = data.results[0].now;
+//            if (weather_now.text.length <= 4){
+//                $(weather.weather_sum).removeClass();
+//                $(weather.weather_sum).addClass("normal");
+//            }
+//            if (weather_now.text.length > 4 && weather_summary.length < 7){
+//                $(weather.weather_sum).removeClass();
+//                $(weather.weather_sum).addClass("small");
+//            }
+//            if (weather_now.text.length >= 7){
+//                $(weather.weather_sum).removeClass();
+//                $(weather.weather_sum).addClass("little");
+//            }
+//            $(weather.weather_sum).text(weather_now.text);
+//            $(weather.current_temp).text(weather_now.temperature + "°");
+//
+//        }
+//    });
+//}
+////////////////////////////////////////////////////////////////////////////////////////
+weather.sen_update = function(){
+    $.getJSON(config.sen_weather.url, function(data) {
+        var obj = document.getElementById('content');
+        var weather = data.results[0];
+        var text = [];
+        text.push("Location: " + weather.location.path);
+        text.push("Weather: " + weather.now.text);
+        text.push("Temperature: " + weather.now.temperature);
+        obj.innerText = text.join("\n")
+  });
 }
 //weather.update_daily = function(){
 //    $.ajax({
