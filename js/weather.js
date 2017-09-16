@@ -89,7 +89,7 @@ function fresh_bw(sunrise, sunset){
 //}
 weather.now_update = function(){
     $.ajax({
-        url: weather.now.apiBase
+        url: weather.now.apiBase,
         data: weather.now.params,
         success: function(data){
             var weather_today = data.result;
