@@ -38,17 +38,17 @@ function fresh_bw(sunrise, sunset){
     var ct = new Date();
     if (ct < sunrise * 1000){
         $("body").removeClass();
-        $("body").addClass("day");
+        $("body").addClass("night");
         return;
     }
     if (ct > sunrise*1000 && ct < sunset*1000){
         $("body").removeClass();
-        $("body").addClass("night");
+        $("body").addClass("day");
         return;
     }
     if (ct > sunrise*1000){
         $("body").removeClass();
-        $("body").addClass("day");
+        $("body").addClass("night");
         return;
     }
 }

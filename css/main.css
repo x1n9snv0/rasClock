@@ -29,20 +29,20 @@ body{
 }
 .hhmmss{
     width: 378px;
-    height: 142px;
+    height: 132px;
     margin: 0px auto;
 }
 #hhmm{
     width: 304px;
     height: 122px;
-    margin: 20px 0px 0px 12px;
+    margin: 10px 0px 0px 12px;
     float: left;
     font-size: 120px;
 }
 #ss{
     width: 54px;
     height: 50px;
-    margin: 40px auto auto 4px;
+    margin: 30px auto auto 4px;
     float: left;
     font-size: 48px;
     color: #777;
