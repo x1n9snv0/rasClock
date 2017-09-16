@@ -1,6 +1,6 @@
 var UID = "U2290F3695"; // 测试用 用户ID，请更换成您自己的用户ID
 var KEY = "lluduqcetfzjk0yu"; // 测试用key，请更换成您自己的 Key
-var AID = "65d175733afd31e932183bca00bf018c",
+var AID = "65d175733afd31e932183bca00bf018c";
 var config = {
     city: "Haidian",
     owm_weather: {
