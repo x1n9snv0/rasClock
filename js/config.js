@@ -10,7 +10,7 @@ var config = {
             appkey: '28291',
             sign: '272481f39accdb3c36f474229da4d22c',
             format: "json",
-            jsoncallback: "data",
+            jsoncallback: "callback",
         }
     },
     owm_weather: {
