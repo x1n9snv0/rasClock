@@ -68,7 +68,7 @@ weather.update_now = function(){
                 $(weather.weather_sum).addClass("little");
             }
             $(weather.weather_sum).text(weather_now.text);
-            $(weather.current_temp).text(weather_now.temperature) + "°");
+            $(weather.current_temp).text(weather_now.temperature + "°");
 
         }
     }
