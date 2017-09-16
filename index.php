@@ -9,7 +9,9 @@
 <script type="text/javascript" src="js/config.js"></script>
 <script type="text/javascript" src="js/icon.js"></script>
 <script type="text/javascript" src="js/weather.js"></script>
+<script type="text/javascript" src="js/tips.js"></script>
 <script type="text/javascript" src="js/driver.js"></script>
+
 </head>
 <body>
     <script type="text/javascript">driver();</script>

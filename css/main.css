@@ -103,8 +103,16 @@ body{
     height: 40px;
     float: left;
     margin: 10px 3px 0px 3px;
-    font-size: 30px;
     text-align: center;
+}
+.normal{
+    font-size: 30px;
+}
+.small{
+    font-size: 20px;
+}
+.little{
+    font-size: 15px;
 }
 #vi{
     width: 80px;

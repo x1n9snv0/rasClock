@@ -3,20 +3,21 @@ var config = {
     weather: {
         apiVersion: '2.5',
         apiBase: 'http://api.openweathermap.org/data',
-        apiEndpoint: 'weather',
+        weatherEndpoint: 'weather',
+        forecastEndpoint: 'forecast',
         params: {
             id: "",
             lang: "zh_cn",
             APPID: "65d175733afd31e932183bca00bf018c",
             units: "metric",
         },
-
     },
     tips: {
         workday: {
             morning: "早安宝贝儿",
             forenoon: "好好上班呀",
-            noon: "午安亲爱的",
+            noon: "吃饱了没",
+            noon_sleep: "午安亲爱的"
             afternoon: "别犯困噢",
             dinner: "可以吃点水果哟",
             evening: "记得做运动",
@@ -25,10 +26,11 @@ var config = {
             midnight: "梦到我了嘛",
         },
         weekend: {
-            morning: "早安宝贝儿",
+            morning: "早安老婆～",
             forenoon: "我觉得你应该睡个懒觉",
             noon: "午饭多吃点儿",
-            afternoon: "又可以补觉啦",
+            noon_sleep: "该午睡啦 午安宝贝儿"
+            afternoon: "是不是可以一直睡",
             dinner: "可以吃点水果哟",
             evening: "记得做运动",
             sleep: "该睡觉啦 记得打卡",
