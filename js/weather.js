@@ -60,10 +60,10 @@ weather.update = function(){
         success: function(data){
                 fresh_bw(data.sys.sunrise, data.sys.sunset);
                 $(weather.weather_icon).removeClass();
-                if $("body").hasClass("day"){
+                if ($("body").hasClass("day")){
                     $(weather.weather_icon).addClass("wi " + icon.day[data.weather[0].id]);
                 }
-                if $("body").hasClass("night"){
+                if ($("body").hasClass("night")){
                     $(weather.weather_icon).addClass("wi " + icon.night[data.weather[0].id]);
                 }
                 $(weather.current_temp).text(weather.roundValue(data.main.temp) + "°");
