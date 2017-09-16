@@ -63,7 +63,8 @@ body{
 }
 .wco{
     width: 100px;
-    height: 100px;
+    height: 80px;
+    margin: 20px 0px 0px 0px;
     float: left;
     font-size: 65px;
     text-align: center;
