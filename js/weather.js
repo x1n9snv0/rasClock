@@ -55,7 +55,7 @@ function fresh_bw(sunrise, sunset){
 
 weather.update = function(){
     $.ajax({
-        url: weather.apiBase + '/' + weather.apiVersion + '/' + weather.apiEndpoint,
+        url: weather.apiBase + '/' + weather.apiVersion + '/' + weather.weatherEndpoint,
         data: weather.params,
         success: function(data){
                 fresh_bw(data.sys.sunrise, data.sys.sunset);

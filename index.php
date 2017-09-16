@@ -15,7 +15,6 @@
 </head>
 <body>
     <script type="text/javascript">driver();</script>
-    <script type="text/javascript">weather.update();</script>
     <div class="time_area">
         <div class="hhmmss">
             <div id="hhmm">23:16</div>
