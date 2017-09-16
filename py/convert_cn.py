@@ -8,7 +8,7 @@ cpy = city_table.col_values(3, 1)
 out = open("../js/city.list.json", 'wb')
 for py in cpy:
     out.write('{\n')
-    out.write('\t"name": "{}",\n'.format(py))
+    out.write('\t"name": "{}",\n'.format(py.capitalize()))
     out.write('\t"id": "{}"\n'.format(int(cid[cpy.index(py)])))
     out.write('},\n')
 out.close()
