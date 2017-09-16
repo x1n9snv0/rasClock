@@ -1,17 +1,43 @@
+var UID = "U2290F3695"; // 测试用 用户ID，请更换成您自己的用户ID
+var KEY = "lluduqcetfzjk0yu"; // 测试用key，请更换成您自己的 Key
+var AID: "65d175733afd31e932183bca00bf018c",
 var config = {
     city: "Haidian",
-    weather: {
-        apiVersion: '2.5',
-        apiBase: 'http://api.openweathermap.org/data',
+    owm_weather: {
+        apiVersion: '2.5/',
+        apiBase: 'http://api.openweathermap.org/data/',
         weatherEndpoint: 'weather',
-        forecastEndpoint: 'forecast',
         params: {
             id: "",
+            APPID: "",
             lang: "zh_cn",
-            APPID: "65d175733afd31e932183bca00bf018c",
             units: "metric",
         },
     },
+    sen_weather: {
+        apiVersion: 'V3/',
+        apiBase: 'http://api.seniverse.com/',
+        nowEndpoint: '/weather/now.json',
+        dailyEndpoint: '/weather/now.json',
+        now_params: {
+            location: '',
+            ts: '',
+            uid: '',
+            sig: '',
+            language: 'zh-Hans',
+            unit: 'c'
+        }
+        daily_params: {
+            location: '',
+            ts: '',
+            uid: '',
+            sig: '',
+            language: 'zh-Hans',
+            unit: 'c',
+            start: '0',
+            days: '1'
+        }
+    }
     tips: {
         workday: {
             morning: "早安宝贝儿",
@@ -39,14 +65,52 @@ var config = {
         }
     }
 }
-
+/*
 $.getJSON("js/cn.city.list.json", function(data){
     var i = 0;
     while(i<data.length){
         if (data[i].name == config.city){
-            config.weather.params.id = data[i].id.toString(10);
+            config.owm_weather.params.id = data[i].id.toString(10);
             break;
         }
         i++;
     }
 });
+*/
+
+config.init = function(){
+    //for seniverse.com
+    var ts = Math.floor((new Date()).getTime() / 1000);
+    var str = "ts=" + ts + "&uid=" + UID;
+    var sig = CryptoJS.HmacSHA1(str, KEY).toString(CryptoJS.enc.Base64);
+    sig = encodeURIComponent(sig);
+    config.sen_weather.now_params.ts = ts;
+    config.sen_weather.now_params.uid = UID;
+    config.sen_weather.now_params.sig = sig;
+    config.sen_weather.daily_params.ts = ts;
+    config.sen_weather.daily_params.uid = UID;
+    config.sen_weather.daily_params.sig = sig;
+    $.getJSON("js/city.list.json", function(data){
+        var i = 0;
+        while(i<data.length){
+            if (data[i].name == config.city){
+                config.sen_weather.now_params.location = data[i].id.toString(10);
+                config.sen_weather.daily_params.location = data[i].id.toString(10);
+                break;
+            }
+            i++;
+        }
+    });
+    //for openweathermap.org
+    config.owm_weather.params.APPID = AID;
+    $.getJSON("js/cn.city.list.json", function(data){
+        var i = 0;
+        while(i<data.length){
+            if (data[i].name == config.city){
+                config.owm_weather.params.id = data[i].id.toString(10);
+                break;
+            }
+            i++;
+        }
+    });
+}

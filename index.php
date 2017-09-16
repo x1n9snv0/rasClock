@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/weather-icons.css">
 <title>rasClock</title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/hmac-sha1.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
 <script type="text/javascript" src="js/icon.js"></script>
 <script type="text/javascript" src="js/weather.js"></script>

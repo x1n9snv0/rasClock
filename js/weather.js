@@ -1,9 +1,6 @@
 var weather = {
-    city: config.city,
-    params: config.weather.params,
-    apiVersion: config.weather.apiVersion,
-    apiBase: config.weather.apiBase,
-    weatherEndpoint: config.weather.weatherEndpoint,
+    sen: config.sen_weather,
+    owm: config.owm_weather,
     weather_icon: "#wc",
     current_temp: "#ct",
     high_temp: "#ht",
@@ -52,47 +49,58 @@ function fresh_bw(sunrise, sunset){
         return;
     }
 }
-
-weather.update = function(){
+weather.update_now = function(){
     $.ajax({
-        url: weather.apiBase + '/' + weather.apiVersion + '/' + weather.weatherEndpoint,
+        url: weather.sen.apiBase + weather.sen.apiVersion + weather.sen.nowEndpoint,
         data: weather.params,
         success: function(data){
-                fresh_bw(data.sys.sunrise, data.sys.sunset);
-                $(weather.weather_icon).removeClass();
-                if ($("body").hasClass("day")){
-                    $(weather.weather_icon).addClass("wi " + icon.day[data.weather[0].id]);
-                }
-                if ($("body").hasClass("night")){
-                    $(weather.weather_icon).addClass("wi " + icon.night[data.weather[0].id]);
-                }
-                $(weather.current_temp).text(weather.roundValue(data.main.temp) + "°");
-                $(weather.high_temp).text(weather.roundValue(data.main.temp_max) + "°");
-                $(weather.humidity).text(weather.roundValue(data.main.humidity) + "%");
-                $(weather.low_temp).text(weather.roundValue(data.main.temp_min) + "°");
-                var weather_summary;
-                if (data.weather.length > 1){
-                    weather_summary = data.weather[0].description + data.weather[1].description;
-                }
-                else{
-                    weather_summary = data.weather[0].description;
-                }
-                if (weather_summary.length <= 4){
-                    $(weather.weather_sum).removeClass();
-                    $(weather.weather_sum).addClass("normal");
-                }
-                if (weather_summary.length > 4 && weather_summary.length < 7){
-                    $(weather.weather_sum).removeClass();
-                    $(weather.weather_sum).addClass("small");
-                }
-                if (weather_summary.length >= 7){
-                    $(weather.weather_sum).removeClass();
-                    $(weather.weather_sum).addClass("little");
-                }
-                $(weather.weather_sum).text(weather_summary);
-                $(weather.visibility).text("V:" + data.visibility + "m")
-                $(weather.sunrise).text(format_rs(data.sys.sunrise))
-                $(weather.sunset).text(format_rs(data.sys.sunset))
-            }.bind(this),
+            var weather_now = data.results[0].now;
+            if (weather_now.text.length <= 4){
+                $(weather.weather_sum).removeClass();
+                $(weather.weather_sum).addClass("normal");
+            }
+            if (weather_now.text.length > 4 && weather_summary.length < 7){
+                $(weather.weather_sum).removeClass();
+                $(weather.weather_sum).addClass("small");
+            }
+            if (weather_now.text.length >= 7){
+                $(weather.weather_sum).removeClass();
+                $(weather.weather_sum).addClass("little");
+            }
+            $(weather.weather_sum).text(weather_now.text);
+            $(weather.current_temp).text(weather_now.temperature) + "°");
+
+        }
+    }
+}
+weather.update_daily = function(){
+    $.ajax({
+        url: weather.sen.apiBase + weather.sen.apiVersion + weather.sen.dailyEndpoint,
+        data: weather.params,
+        success: function(data){
+            var weather_daily = data.results[0].daily;
+            $(weather.high_temp).text(weather_daily.high + "°");
+            $(weather.low_temp).text(weather_daily.low + "°");
+        }
+    }
+}
+weather.update_others = function(){
+    $.ajax({
+        url: weather.owm.apiBase + weather.owm.apiVersion + weather.owm.weatherEndpoint,
+        data: weather.params,
+        success: function(data){
+            fresh_bw(data.sys.sunrise, data.sys.sunset);
+            $(weather.weather_icon).removeClass();
+            if ($("body").hasClass("day")){
+                $(weather.weather_icon).addClass("wi " + icon.day[data.weather[0].id]);
+            }
+            if ($("body").hasClass("night")){
+                $(weather.weather_icon).addClass("wi " + icon.night[data.weather[0].id]);
+            }
+            $(weather.humidity).text(weather.roundValue(data.main.humidity) + "%");
+            $(weather.visibility).text("V:" + data.visibility + "m")
+            $(weather.sunrise).text(format_rs(data.sys.sunrise))
+            $(weather.sunset).text(format_rs(data.sys.sunset))
+        }
     });
 }

@@ -55,7 +55,10 @@ function d_callback(){
             document.getElementById("ss").innerHTML = s;
             document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日 星期" + N;
             if (s.substring(1)=="7"){
-                weather.update();
+                config.init();
+                weather.update_now();
+                weather.update_daily();
+                weather.update_others();
             }
             tip.update();
             setTimeout("driver()", 1000);
