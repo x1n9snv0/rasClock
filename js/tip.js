@@ -2,7 +2,7 @@ var tip = {
     loc: "#tip",
 }
 function switch_ut(ut){
-    var time = new Date(parseInt(ut);
+    var time = new Date(parseInt(ut));
     var h = time.getHours();
     var m = time.getMinutes();
     return parseInt(h, 10) * 100 + parseInt(m ,10);
