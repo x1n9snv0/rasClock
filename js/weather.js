@@ -88,35 +88,10 @@ function fresh_bw(sunrise, sunset){
 //    });
 //}
 weather.now_update = function(){
-    $.getJSON(
-        weather.now.apiBase,
-        weather.now.params,
-        function(data){
-            var weather_today = data.result;
-            if (weather_today.weather.length <= 4){
-                $(weather.weather_sum).removeClass();
-                $(weather.weather_sum).addClass("normal");
-            }
-            if (weather_now.text.length > 4 && weather_summary.length < 7){
-                $(weather.weather_sum).removeClass();
-                $(weather.weather_sum).addClass("small");
-            }
-            if (weather_now.text.length >= 7){
-                $(weather.weather_sum).removeClass();
-                $(weather.weather_sum).addClass("little");
-            }
-            $(weather.weather_sum).text(weather_today.weather);
-            $(weather.high_temp).text(weather_daily.temp_high + "°");
-            $(weather.low_temp).text(weather_daily.temp_low + "°");
-        });
-//    $.ajax({
-//        url: weather.now.apiBase,
-//        data: weather.now.params,
-//        dataType: 'jsonp',
-//        jsonp: "callback",
-//        jsonpCallback: "?",
-//        crossDomain: true,
-//        success: function(data){
+//    $.getJSON(
+//        weather.now.apiBase,
+//        weather.now.params,
+//        function(data){
 //            var weather_today = data.result;
 //            if (weather_today.weather.length <= 4){
 //                $(weather.weather_sum).removeClass();
@@ -133,8 +108,33 @@ weather.now_update = function(){
 //            $(weather.weather_sum).text(weather_today.weather);
 //            $(weather.high_temp).text(weather_daily.temp_high + "°");
 //            $(weather.low_temp).text(weather_daily.temp_low + "°");
-//        }
-//    });
+//        });
+    $.ajax({
+        url: weather.now.apiBase,
+        data: weather.now.params,
+        dataType: 'jsonp',
+        jsonp: "callback",
+        jsonCallback: "data",
+        crossDomain: true,
+        success: function(data){
+            var weather_today = data.result;
+            if (weather_today.weather.length <= 4){
+                $(weather.weather_sum).removeClass();
+                $(weather.weather_sum).addClass("normal");
+            }
+            if (weather_now.text.length > 4 && weather_summary.length < 7){
+                $(weather.weather_sum).removeClass();
+                $(weather.weather_sum).addClass("small");
+            }
+            if (weather_now.text.length >= 7){
+                $(weather.weather_sum).removeClass();
+                $(weather.weather_sum).addClass("little");
+            }
+            $(weather.weather_sum).text(weather_today.weather);
+            $(weather.high_temp).text(weather_daily.temp_high + "°");
+            $(weather.low_temp).text(weather_daily.temp_low + "°");
+        }
+    });
 }
 weather.owm_update = function(){
     $.ajax({
