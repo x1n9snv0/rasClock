@@ -102,8 +102,8 @@ callback = function(data){
         $(weather.weather_sum).addClass("little");
     }
     $(weather.weather_sum).text(weather_today.weather);
-    $(weather.high_temp).text(weather_daily.temp_high + "°");
-    $(weather.low_temp).text(weather_daily.temp_low + "°");
+    $(weather.high_temp).text(weather_today.temp_high + "°");
+    $(weather.low_temp).text(weather_today.temp_low + "°");
 }
 weather.now_update = function(){
 //    $.getJSON(
