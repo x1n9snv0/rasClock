@@ -3,7 +3,7 @@ var weather = {
     params: config.weather.params,
     apiVersion: config.weather.apiVersion,
     apiBase: config.weather.apiBase,
-    apiEndpoint: config.weather.apiEndpoint,
+    weatherEndpoint: config.weather.weatherEndpoint,
     weather_icon: "#wc",
     current_temp: "#ct",
     high_temp: "#ht",
