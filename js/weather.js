@@ -53,6 +53,7 @@ weather.update_now = function(){
     $.ajax({
         url: weather.sen.apiBase + weather.sen.apiVersion + weather.sen.nowEndpoint,
         data: weather.sen.now_params,
+        dataType: 'JSONP',
         success: function(data){
             var weather_now = data.results[0].now;
             if (weather_now.text.length <= 4){
@@ -77,6 +78,7 @@ weather.update_daily = function(){
     $.ajax({
         url: weather.sen.apiBase + weather.sen.apiVersion + weather.sen.dailyEndpoint,
         data: weather.sen.daily_params,
+        dataType: 'JSONP',
         success: function(data){
             var weather_daily = data.results[0].daily;
             $(weather.high_temp).text(weather_daily.high + "°");
