@@ -1,7 +1,7 @@
 var UID = "U2290F3695"; // 测试用 用户ID，请更换成您自己的用户ID
 var KEY = "lluduqcetfzjk0yu"; // 测试用key，请更换成您自己的 Key
 var config = {
-    city: "Beijing",
+    city: "Haidian",
     now_weather: {
         apiBase: 'http://api.k780.com/',
         params: {

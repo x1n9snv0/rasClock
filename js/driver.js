@@ -54,8 +54,10 @@ function d_callback(){
             document.getElementById("hhmm").innerHTML = h + ":" + i;
             document.getElementById("ss").innerHTML = s;
             document.getElementById("date").innerHTML = Y + "年" + m + "月" + d + "日 星期" + N;
-            if (s.substring(1)=="7"){
+            if (s.substring(1)=="1"){
                 config.init();
+            }
+            if (s.substring(1)=="7"){
                 weather.now_update();
                 weather.owm_update();
 //                weather.update_now();
