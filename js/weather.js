@@ -88,7 +88,7 @@ function fresh_bw(sunrise, sunset){
 //    });
 //}
 weather.now_update = function(){
-    $.getJson{
+    $.getJson({
         weather.now.apiBase,
         weather.now.params,
         function(data){
@@ -109,7 +109,7 @@ weather.now_update = function(){
             $(weather.high_temp).text(weather_daily.temp_high + "°");
             $(weather.low_temp).text(weather_daily.temp_low + "°");
         }
-    }
+    });
 //    $.ajax({
 //        url: weather.now.apiBase,
 //        data: weather.now.params,
@@ -135,7 +135,7 @@ weather.now_update = function(){
 //            $(weather.high_temp).text(weather_daily.temp_high + "°");
 //            $(weather.low_temp).text(weather_daily.temp_low + "°");
 //        }
-    });
+//    });
 }
 weather.owm_update = function(){
     $.ajax({
