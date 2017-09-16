@@ -11,7 +11,7 @@ function switch_ut(ut){
 tip.update = function (){
     var ct = new Date();
     var day = ct.getDay();
-    var st = switch_ut(ut);
+    var st = switch_ut(ct);
     if (day > 1){
         if (st < 100){$(tip.loc).text(config.tips.workday.night);}
         if (st >= 100 && st < 710){$(tip.loc).text(config.tips.workday.midnight);}
