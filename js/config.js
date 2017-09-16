@@ -142,7 +142,7 @@ config.init = function(){
             }
             i++;
         }
-        weather.update_now;
+        weather.update_now();
     });
     //for openweathermap.org
     $.getJSON("js/cn.city.list.json", function(data){
