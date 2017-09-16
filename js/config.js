@@ -113,7 +113,7 @@ config.init = function(){
         var i = 0;
         while(i<data.length){
             if (data[i].name == config.city){
-                config.now_weather.params.wedid = data[i].id.toString(10);
+                config.now_weather.params.weaid = data[i].id.toString(10);
                 break;
             }
             i++;
