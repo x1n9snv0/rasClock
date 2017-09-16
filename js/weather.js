@@ -52,7 +52,7 @@ function fresh_bw(sunrise, sunset){
 weather.update_now = function(){
     $.ajax({
         url: weather.sen.apiBase + weather.sen.apiVersion + weather.sen.nowEndpoint,
-        data: weather.params,
+        data: weather.sen.params,
         success: function(data){
             var weather_now = data.results[0].now;
             if (weather_now.text.length <= 4){
@@ -76,7 +76,7 @@ weather.update_now = function(){
 weather.update_daily = function(){
     $.ajax({
         url: weather.sen.apiBase + weather.sen.apiVersion + weather.sen.dailyEndpoint,
-        data: weather.params,
+        data: weather.sen.params,
         success: function(data){
             var weather_daily = data.results[0].daily;
             $(weather.high_temp).text(weather_daily.high + "°");
