@@ -20,7 +20,7 @@ body{
 }
 .night{
     background: #000;
-    color: #fff;
+    color: #ddd;
 }
 .time_area{
     width: 464px;
@@ -45,6 +45,7 @@ body{
     margin: 40px auto auto 4px;
     float: left;
     font-size: 48px;
+    color: #777;
 }
 #date{
     width: 334px;
