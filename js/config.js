@@ -110,7 +110,7 @@ $.getJSON("js/cn.city.list.json", function(data){
 
 config.init = function(){
     //for nowapi.com
-    $.getJSON("js/city.list.json", function(data){
+    $.getJSON("js/now.city.list.json", function(data){
         var i = 0;
         while(i<data.length){
             if (data[i].name == config.city){
@@ -132,7 +132,7 @@ config.init = function(){
     config.sen_weather.daily_params.ts = ts;
     config.sen_weather.daily_params.uid = UID;
     config.sen_weather.daily_params.sig = sig;
-    $.getJSON("js/city.list.json", function(data){
+    $.getJSON("js/sen.city.list.json", function(data){
         var i = 0;
         while(i<data.length){
             if (data[i].name == config.city){
