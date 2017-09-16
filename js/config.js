@@ -15,7 +15,7 @@ var config = {
         },
     },
     sen_weather: {
-        apiVersion: 'V3/',
+        apiVersion: 'v3/',
         apiBase: 'https://api.seniverse.com/',
         nowEndpoint: 'weather/now.json',
         dailyEndpoint: 'weather/now.json',
