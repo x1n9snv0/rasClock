@@ -87,7 +87,7 @@ weather.update = function(){
                     $(weather.weather_sum).addClass("little");
                     $(weather.weather_sum).text(weather_summary);
                 }
-                $(weather.weather_sum).text(data.weather[0].description + data.weather[1].description);
+                $(weather.weather_sum).text(weather_summary);
                 $(weather.visibility).text("V:" + data.visibility + "m")
                 $(weather.sunrise).text(format_rs(data.sys.sunrise))
                 $(weather.sunset).text(format_rs(data.sys.sunset))
