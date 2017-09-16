@@ -60,7 +60,12 @@ weather.update = function(){
         success: function(data){
                 fresh_bw(data.sys.sunrise, data.sys.sunset);
                 $(weather.weather_icon).removeClass();
-                $(weather.weather_icon).addClass("wi " + icon[data.weather[0].id]);
+                if $("body").hasClass("day"){
+                    $(weather.weather_icon).addClass("wi " + icon.day[data.weather[0].id]);
+                }
+                if $("body").hasClass("night"){
+                    $(weather.weather_icon).addClass("wi " + icon.night[data.weather[0].id]);
+                }
                 $(weather.current_temp).text(weather.roundValue(data.main.temp) + "°");
                 $(weather.high_temp).text(weather.roundValue(data.main.temp_max) + "°");
                 $(weather.humidity).text(weather.roundValue(data.main.humidity) + "%");
@@ -75,17 +80,14 @@ weather.update = function(){
                 if (weather_summary.length <= 4){
                     $(weather.weather_sum).removeClass();
                     $(weather.weather_sum).addClass("normal");
-                    $(weather.weather_sum).text(weather_summary);
                 }
                 if (weather_summary.length > 4 && weather_summary.length < 7){
                     $(weather.weather_sum).removeClass();
                     $(weather.weather_sum).addClass("small");
-                    $(weather.weather_sum).text(weather_summary);
                 }
                 if (weather_summary.length >= 7){
                     $(weather.weather_sum).removeClass();
                     $(weather.weather_sum).addClass("little");
-                    $(weather.weather_sum).text(weather_summary);
                 }
                 $(weather.weather_sum).text(weather_summary);
                 $(weather.visibility).text("V:" + data.visibility + "m")
