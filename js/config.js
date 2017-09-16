@@ -3,9 +3,6 @@ var KEY = "lluduqcetfzjk0yu"; // 测试用key，请更换成您自己的 Key
 var AID = "65d175733afd31e932183bca00bf018c";
 var config = {
     city: "Beijing",
-    now_weather{
-
-    }
     owm_weather: {
         apiVersion: '2.5/',
         apiBase: 'http://api.openweathermap.org/data/',
