@@ -121,7 +121,7 @@ config.init = function(){
         }
         weather.now_update();
     });
-    for seniverse.com
+//    for seniverse.com
     var ts = Math.floor((new Date()).getTime() / 1000);
     var str = "ts=" + ts + "&uid=" + UID;
     var sig = CryptoJS.HmacSHA1(str, KEY).toString(CryptoJS.enc.Base64);
