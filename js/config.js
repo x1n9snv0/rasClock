@@ -11,7 +11,7 @@ var config = {
             sign: '272481f39accdb3c36f474229da4d22c',
             format: 'json',
         }
-    }
+    },
     owm_weather: {
         apiVersion: '2.5/',
         apiBase: 'http://api.openweathermap.org/data/',
