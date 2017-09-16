@@ -87,7 +87,7 @@ weather.update_daily = function(){
 weather.update_others = function(){
     $.ajax({
         url: weather.owm.apiBase + weather.owm.apiVersion + weather.owm.weatherEndpoint,
-        data: weather.params,
+        data: weather.owm.params,
         success: function(data){
             fresh_bw(data.sys.sunrise, data.sys.sunset);
             $(weather.weather_icon).removeClass();
