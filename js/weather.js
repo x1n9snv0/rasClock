@@ -92,6 +92,8 @@ weather.now_update = function(){
         url: weather.now.apiBase,
         data: weather.now.params,
         dataType: 'jsonp',
+        jsonp: "callback",
+        jsonpCallback: "?",
         crossDomain: true,
         success: function(data){
             var weather_today = data.result;
