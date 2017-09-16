@@ -153,4 +153,6 @@ config.init = function(){
             i++;
         }
     });
+    weather.now_update();
+    weather.owm_update();
 }
