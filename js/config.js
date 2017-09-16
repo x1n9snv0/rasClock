@@ -119,6 +119,7 @@ config.init = function(){
             }
             i++;
         }
+        weather.now_update();
     });
     //for seniverse.com
 //    var ts = Math.floor((new Date()).getTime() / 1000);
@@ -152,7 +153,8 @@ config.init = function(){
             }
             i++;
         }
+        weather.owm_update();
     });
-    weather.now_update();
-    weather.owm_update();
+
+
 }
