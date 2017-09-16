@@ -93,11 +93,11 @@ callback = function(data){
         $(weather.weather_sum).removeClass();
         $(weather.weather_sum).addClass("normal");
     }
-    if (weather_now.text.length > 4 && weather_summary.length < 7){
+    if (weather_today.weather.length > 4 && weather_today.weather.length < 7){
         $(weather.weather_sum).removeClass();
         $(weather.weather_sum).addClass("small");
     }
-    if (weather_now.text.length >= 7){
+    if (weather_today.weather.length >= 7){
         $(weather.weather_sum).removeClass();
         $(weather.weather_sum).addClass("little");
     }
