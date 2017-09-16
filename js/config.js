@@ -75,7 +75,7 @@ var config = {
         API: "http://api.seniverse.com/v3/weather/now.json", // 获取天气实况
         LOCATION: "",
         url: "",
-    }
+    },
     tips: {
         workday: {
             morning: "早安宝贝儿",
