@@ -91,6 +91,7 @@ weather.now_update = function(){
     $.ajax({
         url: weather.now.apiBase,
         data: weather.now.params,
+        dataType: 'jsonp',
         success: function(data){
             var weather_today = data.result;
             if (weather_today.weather.length <= 4){
