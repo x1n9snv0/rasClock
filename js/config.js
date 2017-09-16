@@ -25,8 +25,8 @@ var config = {
             uid: '',
             sig: '',
             language: 'zh-Hans',
-            unit: 'c'
-        }
+            unit: 'c',
+        },
         daily_params: {
             location: '',
             ts: '',
@@ -35,9 +35,9 @@ var config = {
             language: 'zh-Hans',
             unit: 'c',
             start: '0',
-            days: '1'
-        }
-    }
+            days: '1',
+        },
+    },
     tips: {
         workday: {
             morning: "早安宝贝儿",
@@ -62,8 +62,8 @@ var config = {
             sleep: "该睡觉啦 记得打卡",
             night: "媳妇儿晚安",
             midnight: "做个好梦呀",
-        }
-    }
+        },
+    },
 }
 /*
 $.getJSON("js/cn.city.list.json", function(data){
