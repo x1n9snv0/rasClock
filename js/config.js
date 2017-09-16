@@ -29,7 +29,7 @@ var config = {
             morning: "早安老婆～",
             forenoon: "我觉得你应该睡个懒觉",
             noon: "午饭多吃点儿",
-            noon_sleep: "该午睡啦 午安宝贝儿"
+            noon_sleep: "该午睡啦 午安宝贝儿",
             afternoon: "是不是可以一直睡",
             dinner: "可以吃点水果哟",
             evening: "记得做运动",
