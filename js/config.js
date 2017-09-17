@@ -69,13 +69,13 @@ var config = {
 //            days: '1',
 //        },
 //    },
-    sen_weather: {
-        UID: "U2290F3695", // 测试用 用户ID，请更换成您自己的用户ID
-        KEY: "lluduqcetfzjk0yu", // 测试用key，请更换成您自己的 Key
-        API: "http://api.seniverse.com/v3/weather/now.json", // 获取天气实况
-        LOCATION: "",
-        url: "",
-    },
+//    sen_weather: {
+//        UID: "U2290F3695", // 测试用 用户ID，请更换成您自己的用户ID
+//        KEY: "lluduqcetfzjk0yu", // 测试用key，请更换成您自己的 Key
+//        API: "http://api.seniverse.com/v3/weather/now.json", // 获取天气实况
+//        LOCATION: "",
+//        url: "",
+//    },
     tips: {
         workday: {
             morning: "早安宝贝儿",
@@ -141,35 +141,41 @@ config.init = function(){
 //        weather.update_now();
 //    });
 ///////////////////////////////////////////////////////////////////////////////////////
-    var UID = "U2290F3695"; // 测试用 用户ID，请更换成您自己的用户ID
-    var KEY = "lluduqcetfzjk0yu"; // 测试用key，请更换成您自己的 Key
-    var API = "http://api.seniverse.com/v3/weather/now.json"; // 获取天气实况
-    var LOCATION = "beijing"; // 除拼音外，还可以使用 v3 id、汉语等形式
-    // 获取当前时间戳
-    var ts = Math.floor((new Date()).getTime() / 1000);
-    // 构造验证参数字符串
-//    var str = "ts=" + ts + "&uid=" + UID;
-    var str = "ts=" + ts + "&uid=" + config.sen_weather.UID;
-    // 使用 HMAC-SHA1 方式，以 API 密钥（key）对上一步生成的参数字符串（raw）进行加密
-    // 并将加密结果用 base64 编码，并做一个 urlencode，得到签名 sig
-    var sig = CryptoJS.HmacSHA1(str, config.sen_weather.KEY).toString(CryptoJS.enc.Base64);
-    sig = encodeURIComponent(sig);
-    str = str + "&sig=" + sig;
-    // 构造最终请求的 url
-    $.getJSON("js/sen.city.list.json", function(data){
-        var i = 0;
-        while(i<data.length){
-            if (data[i].name == config.city){
-                config.sen_weather.LOCATION = data[i].id.toString(10);
-                config.sen_weather.url = API + "?location=" + config.sen_weather.LOCATION + "&" + str + "&callback=foo";
-                break;
-            }
-            i++;
-        }
-        weather.sen_update();
-    });
+//    var UID = "U2290F3695"; // 测试用 用户ID，请更换成您自己的用户ID
+//    var KEY = "lluduqcetfzjk0yu"; // 测试用key，请更换成您自己的 Key
+//    var API = "http://api.seniverse.com/v3/weather/now.json"; // 获取天气实况
+//    var LOCATION = "beijing"; // 除拼音外，还可以使用 v3 id、汉语等形式
+//    // 获取当前时间戳
+//    var ts = Math.floor((new Date()).getTime() / 1000);
+//    // 构造验证参数字符串
+////    var str = "ts=" + ts + "&uid=" + UID;
+//    var str = "ts=" + ts + "&uid=" + config.sen_weather.UID;
+//    // 使用 HMAC-SHA1 方式，以 API 密钥（key）对上一步生成的参数字符串（raw）进行加密
+//    // 并将加密结果用 base64 编码，并做一个 urlencode，得到签名 sig
+//    var sig = CryptoJS.HmacSHA1(str, config.sen_weather.KEY).toString(CryptoJS.enc.Base64);
+//    sig = encodeURIComponent(sig);
+//    str = str + "&sig=" + sig;
+//    // 构造最终请求的 url
+//    $.getJSON("js/sen.city.list.json", function(data){
+//        var i = 0;
+//        while(i<data.length){
+//            if (data[i].name == config.city){
+//                config.sen_weather.LOCATION = data[i].id.toString(10);
+//                config.sen_weather.url = API + "?location=" + config.sen_weather.LOCATION + "&" + str + "&callback=foo";
+//                break;
+//            }
+//            i++;
+//        }
+//        weather.sen_update();
+//    });
 //    var url = API + "?location=" + config.sen_weather.LOCATION + "&" + str + "&callback=foo";
-
+      $.get("buildSenUrl.php?city=haidian", function(data){
+          var url = data + "&callback=weather.sen_update"
+          var newScript = document.createElement('script');
+          newScript.type = 'text/javascript';
+          newScript.src = url;
+          $('body').append(newScript);
+      })
     //for openweathermap.org
     $.getJSON("js/cn.city.list.json", function(data){
         var i = 0;

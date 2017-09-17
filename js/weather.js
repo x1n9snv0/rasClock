@@ -76,16 +76,10 @@ function fresh_bw(sunrise, sunset){
 //    });
 //}
 ////////////////////////////////////////////////////////////////////////////////////////
-weather.sen_update = function(){
-    $.getJSON(config.sen_weather.url, function(data) {
-        var obj = document.getElementById('content');
-        var weather = data.results[0];
-        var text = [];
-        text.push("Location: " + weather.location.path);
-        text.push("Weather: " + weather.now.text);
-        text.push("Temperature: " + weather.now.temperature);
-        obj.innerText = text.join("\n")
-  });
+weather.sen_update = function(data){
+    var weather_daily = data.results[0].daily;
+    $(weather.high_temp).text(weather_daily.high + "°");
+    $(weather.low_temp).text(weather_daily.low + "°");
 }
 //weather.update_daily = function(){
 //    $.ajax({
