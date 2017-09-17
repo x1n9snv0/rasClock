@@ -12,6 +12,14 @@ var weather = {
     sunrise: "#s_r",
     sunset: "#s_s",
 }
+/**
+ * Rounds a float to one decimal place
+ * @param  {float} temperature The temperature to be rounded
+ * @return {float}             The new floating point value
+ */
+weather.roundValue = function (temperature) {
+	return parseFloat(temperature).toFixed();
+}
 /*
  * format unix time to hh:mm
  * @param {string} string UNIX time to  be formatted
