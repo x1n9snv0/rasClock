@@ -12,14 +12,6 @@ var weather = {
     sunrise: "#s_r",
     sunset: "#s_s",
 }
-/**
- * Rounds a float to one decimal place
- * @param  {float} temperature The temperature to be rounded
- * @return {float}             The new floating point value
- */
-weather.roundValue = function (temperature) {
-	return parseFloat(temperature).toFixed();
-}
 /*
  * format unix time to hh:mm
  * @param {string} string UNIX time to  be formatted
@@ -50,49 +42,6 @@ function fresh_bw(sunrise, sunset){
         return;
     }
 }
-//weather.update_now = function(){
-//    $.ajax({
-//        url: weather.sen.apiBase + weather.sen.apiVersion + weather.sen.nowEndpoint,
-//        data: weather.sen.now_params,
-//        dataType: 'JSONP',
-//        success: function(data){
-//            var weather_now = data.results[0].now;
-//            if (weather_now.text.length <= 4){
-//                $(weather.weather_sum).removeClass();
-//                $(weather.weather_sum).addClass("normal");
-//            }
-//            if (weather_now.text.length > 4 && weather_summary.length < 7){
-//                $(weather.weather_sum).removeClass();
-//                $(weather.weather_sum).addClass("small");
-//            }
-//            if (weather_now.text.length >= 7){
-//                $(weather.weather_sum).removeClass();
-//                $(weather.weather_sum).addClass("little");
-//            }
-//            $(weather.weather_sum).text(weather_now.text);
-//            $(weather.current_temp).text(weather_now.temperature + "°");
-//
-//        }
-//    });
-//}
-////////////////////////////////////////////////////////////////////////////////////////
-weather.sen_update = function(data){
-    var weather_daily = data.results[0].daily;
-    $(weather.high_temp).text(weather_daily.high + "°");
-    $(weather.low_temp).text(weather_daily.low + "°");
-}
-//weather.update_daily = function(){
-//    $.ajax({
-//        url: weather.sen.apiBase + weather.sen.apiVersion + weather.sen.dailyEndpoint,
-//        data: weather.sen.daily_params,
-//        dataType: 'JSONP',
-//        success: function(data){
-//            var weather_daily = data.results[0].daily;
-//            $(weather.high_temp).text(weather_daily.high + "°");
-//            $(weather.low_temp).text(weather_daily.low + "°");
-//        }
-//    });
-//}
 callback = function(data){
     var weather_today = data.result;
     if (weather_today.weather.length <= 4){
@@ -112,49 +61,10 @@ callback = function(data){
     $(weather.low_temp).text(weather_today.temp_low + "°");
 }
 weather.now_update = function(){
-//    $.getJSON(
-//        weather.now.apiBase,
-//        weather.now.params,
-//        function(data){
-//            var weather_today = data.result;
-//            if (weather_today.weather.length <= 4){
-//                $(weather.weather_sum).removeClass();
-//                $(weather.weather_sum).addClass("normal");
-//            }
-//            if (weather_now.text.length > 4 && weather_summary.length < 7){
-//                $(weather.weather_sum).removeClass();
-//                $(weather.weather_sum).addClass("small");
-//            }
-//            if (weather_now.text.length >= 7){
-//                $(weather.weather_sum).removeClass();
-//                $(weather.weather_sum).addClass("little");
-//            }
-//            $(weather.weather_sum).text(weather_today.weather);
-//            $(weather.high_temp).text(weather_daily.temp_high + "°");
-//            $(weather.low_temp).text(weather_daily.temp_low + "°");
-//        });
     $.ajax({
         url: weather.now.apiBase,
         data: weather.now.params,
         dataType: 'jsonp',
-//        success: function(data){
-//            var weather_today = data.result;
-//            if (weather_today.weather.length <= 4){
-//                $(weather.weather_sum).removeClass();
-//                $(weather.weather_sum).addClass("normal");
-//            }
-//            if (weather_now.text.length > 4 && weather_summary.length < 7){
-//                $(weather.weather_sum).removeClass();
-//                $(weather.weather_sum).addClass("small");
-//            }
-//            if (weather_now.text.length >= 7){
-//                $(weather.weather_sum).removeClass();
-//                $(weather.weather_sum).addClass("little");
-//            }
-//            $(weather.weather_sum).text(weather_today.weather);
-//            $(weather.high_temp).text(weather_daily.temp_high + "°");
-//            $(weather.low_temp).text(weather_daily.temp_low + "°");
-//        }
     });
 }
 weather.owm_update = function(){
