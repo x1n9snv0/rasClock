@@ -3,7 +3,7 @@ var KEY = "lluduqcetfzjk0yu"; // 测试用key，请更换成您自己的 Key
 var config = {
     city: "Haidian",
     now_weather: {
-        apiBase: 'http://api.k780.com/',
+        apiBase: 'https://sapi.k780.com/',
         params: {
             weaid: '',
             app: 'weather.today',
