@@ -15,7 +15,7 @@ var config = {
     },
     owm_weather: {
         apiVersion: '2.5/',
-        apiBase: 'http://api.openweathermap.org/data/',
+        apiBase: 'https://api.openweathermap.org/data/',
         weatherEndpoint: 'weather',
         params: {
             id: "",
