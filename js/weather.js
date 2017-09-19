@@ -44,7 +44,7 @@ function fresh_bw(sunrise, sunset){
         $("body").addClass("day");
         return;
     }
-    if (ct > sunrise*1000){
+    if (ct > sunset*1000){
         $("body").removeClass();
         $("body").addClass("night");
         return;
