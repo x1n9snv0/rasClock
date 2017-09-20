@@ -29,6 +29,8 @@ function format_rs(ut){
     var time = new Date(parseInt(ut * 1000));
     var h = time.getHours();
     var m = time.getMinutes();
+    if (h < 10){h = "0" + h.toString();}
+    if (m < 10){m = "0" + m.toString();}
     return h + ':' + m;
 }
 
