@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/weather-icons.css">
+<link rel="icon" type="text/css" href="rasicon.png">
 <title>rasClock</title>
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="js/hmac-sha1.js"></script>
