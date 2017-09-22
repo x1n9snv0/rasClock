@@ -33,20 +33,27 @@ function format_rs(ut){
     if (m < 10){m = "0" + m.toString();}
     return h + ':' + m;
 }
-
+function switch_ut(ut){
+    var time = new Date(ut);
+    var h = time.getHours();
+    var m = time.getMinutes();
+    return parseInt(h, 10) * 100 + parseInt(m ,10);
+}
 function fresh_bw(sunrise, sunset){
-    var ct = new Date().getTime();
-    if (ct < sunrise * 1000){
+    var ct = switch_ut(new Date());
+    var rst = switch_ut(sunrise * 1000);
+    var sst = switch_ut(sunset * 1000);
+    if (ct < rst){
         $("body").removeClass();
         $("body").addClass("night");
         return;
     }
-    if (ct > sunrise*1000 && ct < sunset*1000){
+    if (ct > rst && ct < sst){
         $("body").removeClass();
         $("body").addClass("day");
         return;
     }
-    if (ct > sunset*1000){
+    if (ct > sst){
         $("body").removeClass();
         $("body").addClass("night");
         return;
