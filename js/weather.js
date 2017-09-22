@@ -35,7 +35,7 @@ function format_rs(ut){
 }
 
 function fresh_bw(sunrise, sunset){
-    var ct = new Date();
+    var ct = new Date().getTime();
     if (ct < sunrise * 1000){
         $("body").removeClass();
         $("body").addClass("night");
