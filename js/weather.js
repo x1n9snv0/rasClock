@@ -99,7 +99,7 @@ weather.hef_update = function(){
     });
     $.ajax({
         url: weather.hef.apiBase + weather.hef.nowEndpoint,
-        data: weather.hef.params;
+        data: weather.hef.params,
         success: function(data){
             var weather_now = data.HeWeather5[0].now;
             if (weather_now.cond.txt.length <= 4){
