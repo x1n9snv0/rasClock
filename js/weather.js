@@ -88,7 +88,7 @@ weather.now_update = function(){
 weather.hef_update = function(){
     $.ajax({
         url: weather.hef.apiBase + weather.hef.weatherEndpoint,
-        data: weather.hef.params;
+        data: weather.hef.params,
         success: function(data){
             var weather_today = data.HeWeather5[0].daily_forecast[0];
             $(weather.high_temp).text(weather_today.tmp.max + "°");
