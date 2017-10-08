@@ -149,14 +149,26 @@ body{
     float: left;
     margin: 0px 0px 0px 5px;
 }
-.aq{
+.pm25{
+    width: 40px;
+    height: 20px;
+    float: left;
+    font-size: 18px;
+}
+#pm{
     width: 30px;
     height: 20px;
     float: left;
     font-size: 18px;
 }
+.aq{
+    width: 25px;
+    height: 20px;
+    float: left;
+    font-size: 18px;
+}
 #aq_text{
-    width: 100px;
+    width: 35px;
     height: 20px;
     float: left;
     font-size: 18px;

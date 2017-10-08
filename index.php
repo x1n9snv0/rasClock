@@ -34,6 +34,8 @@
             <div id="su">多云转晴</div>
             <div id="vi">V:1000m</div>
             <div class="aqi">
+                <div class="pm25">pm2.5</div>
+                <div id="pm">35</div>
                 <div class="aq">AQ:</div>
                 <div id="aq_text">优</div>
             </div>
