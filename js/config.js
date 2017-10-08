@@ -104,7 +104,8 @@ config.init = function(){
     $.ajax({
         url: "https://rasclock.x1n9snv0.top/current.php",
         data: {
-            jsonCallback: "configCall",
+            jsonp: "callback",
+            jsonpCallback: "configCall",
         },
         dataType: 'jsonp',
         success: function(json){
