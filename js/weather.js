@@ -97,14 +97,14 @@ weather.hef_update = function(){
             if (data.HeWeather5[0].hasOwnProperty("aqi")){
                 var weather_aqi = data.HeWeather5[0].aqi.city;
                 var aqi_key = document.createElement("div");
-                aqi_key.addClass("pm25");
+                aqi_key.setAttribute("class", "pm25");
                 aqi_key.innerText="PM2.5:";
                 var aqi_vel = document.createElement("div");
                 aqi_vel.setAttribute("id", "pm");
                 document.getElementById("hhmmss").appendChild(aqi_key);
                 document.getElementById("hhmmss").appendChild(aqi_vel);
                 var aq_key = document.createElement("div");
-                aq_key.addClass("aq");
+                aq_key.setAttribute("class", "aq");
                 aq_key.innerText="空气质量: ";
                 var aq_text = document.createElement("div");
                 aq_text.setAttribute("id", "aq_text");
@@ -123,8 +123,8 @@ weather.hef_update = function(){
                 var sunset_text = document.createElement("div");
                 sunrise_icon_div.setAttribute("class", "rise_set");
                 sunset_icon_div.setAttribute("class", "rise_set");
-                sunrise_icon.addClass("wi wi-sunrise");
-                sunset_icon.addClass("wi wi-sunset");
+                sunrise_icon.setAttribute("class", "wi wi-sunrise");
+                sunset_icon.setAttribute("class", "wi wi-sunset");
                 sunrise_icon_div.appendChild(sunrise_icon);
                 sunset_icon_div.appendChild(sunset_icon);
                 sunrise_text.setAttribute("class", "r_s");
