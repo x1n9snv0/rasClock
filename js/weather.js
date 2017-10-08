@@ -98,6 +98,7 @@ weather.hef_update = function(){
                 var weather_aqi = data.HeWeather5[0].aqi.city;
                 var aqi_key = document.createElement("div");
                 aqi_key.setAttribute("class", "pm25");
+                aqi_key.setAttribute("id", "pm25");
                 aqi_key.innerText="PM2.5:";
                 var aqi_vel = document.createElement("div");
                 aqi_vel.setAttribute("id", "pm");
@@ -105,6 +106,7 @@ weather.hef_update = function(){
                 document.getElementById("hhmmss").appendChild(aqi_vel);
                 var aq_key = document.createElement("div");
                 aq_key.setAttribute("class", "aq");
+                aq_key.setAttribute("id", "aq_key");
                 aq_key.innerText="空气质量: ";
                 var aq_text = document.createElement("div");
                 aq_text.setAttribute("id", "aq_text");
@@ -122,7 +124,9 @@ weather.hef_update = function(){
                 var sunrise_text = document.createElement("div");
                 var sunset_text = document.createElement("div");
                 sunrise_icon_div.setAttribute("class", "rise_set");
+                sunrise_icon_div.setAttribute("id", "sunrise_icon_div"); //如果有id，该dom元素就不会被重复添加
                 sunset_icon_div.setAttribute("class", "rise_set");
+                sunset_icon_div.setAttribute("id", "sunset_icon_div");
                 sunrise_icon.setAttribute("class", "wi wi-sunrise");
                 sunset_icon.setAttribute("class", "wi wi-sunset");
                 sunrise_icon_div.appendChild(sunrise_icon);
@@ -160,6 +164,8 @@ weather.hef_update = function(){
             $(weather.weather_sum).text(weather_now.cond.txt);
             $(weather.humidity).text(weather_now.hum + "%");
             $(weather.current_temp).text(weather_now.tmp + "°");
+            $(weather.visibility).text("V:" + weather_now.vis.parseInt * 1000 + "m")
+
         }
     });
 }
@@ -176,11 +182,6 @@ weather.owm_update = function(){
             if ($("body").hasClass("night")){
                 $(weather.weather_icon).addClass("wi " + icon.night[data.weather[0].id]);
             }
-            //$(weather.humidity).text(weather.roundValue(data.main.humidity) + "%");
-            //$(weather.current_temp).text(data.main.temp + "°");
-            $(weather.visibility).text("V:" + data.visibility + "m")
-            //$(weather.sunrise).text(format_rs(data.sys.sunrise))
-            //$(weather.sunset).text(format_rs(data.sys.sunset))
         }
     });
 }
