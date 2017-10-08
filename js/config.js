@@ -87,7 +87,7 @@ var config = {
 //    });
 //}
 config.init = function(){
-    $.get("current", function(data){
+    $.getJSON("current", function(data){
         config.city.hef = data.hef;
         config.city.owm = data.owm;
         weather.hef_update();
