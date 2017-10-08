@@ -1,16 +1,19 @@
 var config = {
-    city: "Haidian",
-    now_weather: {
-        apiBase: 'https://sapi.k780.com/',
-        params: {
-            weaid: '',
-            app: 'weather.today',
-            appkey: '28291',
-            sign: '272481f39accdb3c36f474229da4d22c',
-            format: "json",
-            jsoncallback: "callback",
-        }
+    city: {
+        hef: "",
+        owm: "",
     },
+//    now_weather: {
+//        apiBase: 'https://sapi.k780.com/',
+//        params: {
+//            weaid: '',
+//            app: 'weather.today',
+//            appkey: '28291',
+//            sign: '272481f39accdb3c36f474229da4d22c',
+//            format: "json",
+//            jsoncallback: "callback",
+//        }
+//    },
     owm_weather: {
         apiVersion: '2.5/',
         apiBase: 'https://api.openweathermap.org/data/',
@@ -20,7 +23,16 @@ var config = {
             APPID: "65d175733afd31e932183bca00bf018c",
             lang: "zh_cn",
             units: "metric",
-        },
+        }
+    },
+    hef_weather:{
+        apiBase: 'https://free-api.heweather.com/v5/',
+        weatherEndpoint: 'weather',
+        nowEndpoint: 'now',
+        params:{
+            city: "",
+            key: "54f77983bfd6460a82a498240839807b",
+        }
     },
     tips: {
         workday: {
@@ -50,22 +62,41 @@ var config = {
     },
 }
 
+//config.init = function(){
+//    $.getJSON("js/now.city.list.json", function(data){
+//        var i = 0;
+//        while(i<data.length){
+//            if (data[i].name == config.city){
+//                config.now_weather.params.weaid = data[i].id.toString(10);
+//                break;
+//            }
+//            i++;
+//        }
+//        weather.now_update();
+//    });
+//    $.getJSON("js/cn.city.list.json", function(data){
+//        var i = 0;
+//        while(i<data.length){
+//            if (data[i].name == config.city){
+//                config.owm_weather.params.id = data[i].id.toString(10);
+//                break;
+//            }
+//            i++;
+//        }
+//        weather.owm_update();
+//    });
+//}
 config.init = function(){
-    $.getJSON("js/now.city.list.json", function(data){
-        var i = 0;
-        while(i<data.length){
-            if (data[i].name == config.city){
-                config.now_weather.params.weaid = data[i].id.toString(10);
-                break;
-            }
-            i++;
-        }
-        weather.now_update();
+    $.get("current", function(data){
+        config.city.hef = data.hef;
+        config.city.owm = data.owm;
+        weather.hef_update();
     });
+
     $.getJSON("js/cn.city.list.json", function(data){
         var i = 0;
         while(i<data.length){
-            if (data[i].name == config.city){
+            if (data[i].name == config.city.owm){
                 config.owm_weather.params.id = data[i].id.toString(10);
                 break;
             }
@@ -73,6 +104,4 @@ config.init = function(){
         }
         weather.owm_update();
     });
-
-
 }

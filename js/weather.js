@@ -1,5 +1,5 @@
 var weather = {
-    sen: config.sen_weather,
+    hef: config.hef_weather,
     owm: config.owm_weather,
     now: config.now_weather,
     weather_icon: "#wc",
@@ -11,6 +11,7 @@ var weather = {
     visibility: "#vi",
     sunrise: "#s_r",
     sunset: "#s_s",
+    aq_text: "#aq_text",
 }
 /**
  * Rounds a float to one decimal place
@@ -84,6 +85,41 @@ weather.now_update = function(){
         dataType: 'jsonp',
     });
 }
+weather.hef_update = function(){
+    $.ajax({
+        url: weather.hef.apiBase + weather.hef.weatherEndpoint,
+        data: weather.hef.params;
+        success: function(data){
+            var weather_today = data.HeWeather5[0].daily_forecast[0];
+            $(weather.high_temp).text(weather_today.tmp.max + "°");
+            $(weather.low_temp).text(weather_today.tmp.min + "°");
+            var weather_aqi = data.HeWeather5[0].aqi.city;
+            $(weather.aq_text).text(weather_aqi.qlty);
+        }
+    });
+    $.ajax({
+        url: weather.hef.apiBase + weather.hef.nowEndpoint,
+        data: weather.hef.params;
+        success: function(data){
+            var weather_now = data.HeWeather5[0].now;
+            if (weather_now.cond.txt.length <= 4){
+                $(weather.weather_sum).removeClass();
+                $(weather.weather_sum).addClass("normal");
+            }
+            if (weather_now.cond.txt.length > 4 && weather_now.cond.txt.length < 7){
+                $(weather.weather_sum).removeClass();
+                $(weather.weather_sum).addClass("small");
+            }
+            if (weather_now.cond.txt.length >= 7){
+                $(weather.weather_sum).removeClass();
+                $(weather.weather_sum).addClass("little");
+            }
+            $(weather.weather_sum).text(weather_today.cond.txt);
+            $(weather.humidity).text(weather_now.hum + "%");
+            $(weather.current_temp).text(weather_now.tmp + "°");
+        }
+    });
+}
 weather.owm_update = function(){
     $.ajax({
         url: weather.owm.apiBase + weather.owm.apiVersion + weather.owm.weatherEndpoint,
@@ -100,8 +136,8 @@ weather.owm_update = function(){
             $(weather.humidity).text(weather.roundValue(data.main.humidity) + "%");
             $(weather.current_temp).text(data.main.temp + "°");
             $(weather.visibility).text("V:" + data.visibility + "m")
-            $(weather.sunrise).text(format_rs(data.sys.sunrise))
-            $(weather.sunset).text(format_rs(data.sys.sunset))
+            //$(weather.sunrise).text(format_rs(data.sys.sunrise))
+            //$(weather.sunset).text(format_rs(data.sys.sunset))
         }
     });
 }
