@@ -95,7 +95,7 @@ weather.hef_update = function(){
             $(weather.high_temp).text(weather_today.tmp.max + "°");
             $(weather.low_temp).text(weather_today.tmp.min + "°");
             var weather_aqi = data.HeWeather5[0].aqi.city;
-            $(weather_pm).text(weather_aqi.pm25);
+            $(weather.pm).text(weather_aqi.pm25);
             $(weather.aq_text).text(weather_aqi.qlty);
         }
     });
