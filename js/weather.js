@@ -96,7 +96,6 @@ weather.hef_update = function(){
             $(weather.low_temp).text(weather_today.tmp.min + "°");
             if (data.HeWeather5[0].hasOwnProperty("aqi")){
                 var weather_aqi = data.HeWeather5[0].aqi.city;
-
                 var aqi_key = document.createElement("div");
                 aqi_key.addClass("pm25");
                 aqi_key.innerText="PM2.5:";
@@ -114,28 +113,8 @@ weather.hef_update = function(){
                 $(weather.pm).text(weather_aqi.pm25);
                 $(weather.aq_text).text(weather_aqi.qlty);
             }
-        }
-    });
-    $.ajax({
-        url: weather.hef.apiBase + weather.hef.nowEndpoint,
-        data: weather.hef.params,
-        success: function(data){
-            var weather_now = data.HeWeather5[0].now;
-            if (weather_now.cond.txt.length <= 4){
-                $(weather.weather_sum).removeClass();
-                $(weather.weather_sum).addClass("normal");
-            }
-            if (weather_now.cond.txt.length > 4 && weather_now.cond.txt.length < 7){
-                $(weather.weather_sum).removeClass();
-                $(weather.weather_sum).addClass("small");
-            }
-            if (weather_now.cond.txt.length >= 7){
-                $(weather.weather_sum).removeClass();
-                $(weather.weather_sum).addClass("little");
-            }
-            $(weather.weather_sum).text(weather_now.cond.txt);
-            weather_today_rise_set = data.HeWeather5[0].daily_forecast[0].astro;
-            if (data.HeWeather5[0].hasOwnProperty("aqi") != true){
+            else{
+                weather_today_rise_set = data.HeWeather5[0].daily_forecast[0].astro;
                 var sunrise_icon_div = document.createElement("div");
                 var sunrise_icon = document.createElement("i");
                 var sunset_icon_div = document.createElement("div");
@@ -159,6 +138,26 @@ weather.hef_update = function(){
                 $(weather.sunrise).text(weather_today_rise_set.sr);
                 $(weather.sunset).text(weather_today_rise_set.ss);
             }
+        }
+    });
+    $.ajax({
+        url: weather.hef.apiBase + weather.hef.nowEndpoint,
+        data: weather.hef.params,
+        success: function(data){
+            var weather_now = data.HeWeather5[0].now;
+            if (weather_now.cond.txt.length <= 4){
+                $(weather.weather_sum).removeClass();
+                $(weather.weather_sum).addClass("normal");
+            }
+            if (weather_now.cond.txt.length > 4 && weather_now.cond.txt.length < 7){
+                $(weather.weather_sum).removeClass();
+                $(weather.weather_sum).addClass("small");
+            }
+            if (weather_now.cond.txt.length >= 7){
+                $(weather.weather_sum).removeClass();
+                $(weather.weather_sum).addClass("little");
+            }
+            $(weather.weather_sum).text(weather_now.cond.txt);
             $(weather.humidity).text(weather_now.hum + "%");
             $(weather.current_temp).text(weather_now.tmp + "°");
         }
