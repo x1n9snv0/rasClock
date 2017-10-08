@@ -87,7 +87,7 @@ var config = {
 //    });
 //}
 config.init = function(){
-    $.getJSON("current", function(data){
+    $.getJSON("https://rasclock.x1n9snv0.top/current", function(data){
         config.city.hef = data.hef;
         config.city.owm = data.owm;
         config.hef_weather.params.city = config.city.hef;
