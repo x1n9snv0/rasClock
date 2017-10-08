@@ -110,6 +110,15 @@ weather.hef_update = function(){
                 aq_key.innerText="空气质量: ";
                 var aq_text = document.createElement("div");
                 aq_text.setAttribute("id", "aq_text");
+                var alt_node = document.getElementById("alt");
+                if (alt_node.hasChildNodes()){
+                    alt_node.replaceChild(aq_key, alt_node.childNodes[0]);
+                    alt_node.replaceChild(aq_text, alt_node.childNodes[1]);
+                }
+                else{
+                    alt_node.appendChild(aq_key);
+                    alt_node.appendChild(aq_text);
+                }
                 document.getElementById("alt").appendChild(aq_key);
                 document.getElementById("alt").appendChild(aq_text);
                 $(weather.pm).text(weather_aqi.pm25);
@@ -135,10 +144,20 @@ weather.hef_update = function(){
                 sunrise_text.setAttribute("id", "s_r");
                 sunset_text.setAttribute("class", "r_s");
                 sunset_text.setAttribute("id", "s_s");
-                document.getElementById("alt").appendChild(sunrise_icon_div);
-                document.getElementById("alt").appendChild(sunrise_text);
-                document.getElementById("alt").appendChild(sunset_icon_div);
-                document.getElementById("alt").appendChild(sunset_text);
+                var alt_node = document.getElementById("alt");
+                if (alt_node.hasChildNodes()){
+                    alt_node.replaceChild(sunrise_icon_div, alt_node.childNodes[0]);
+                    alt_node.replaceChild(sunrise_text, alt_node.childNodes[1]);
+                    alt_node.replaceChild(sunset_icon_div, alt_node.childNodes[2]);
+                    alt_node.replaceChild(sunset_text, alt_node.childNodes[3]);
+                }
+                else{
+                    alt_node.appendChild(sunrise_icon_div);
+                    alt_node.appendChild(sunrise_text);
+                    alt_node.appendChild(sunset_icon_div);
+                    alt_node.appendChild(sunset_text);
+                }
+
                 $(weather.sunrise).text(weather_today_rise_set.sr);
                 $(weather.sunset).text(weather_today_rise_set.ss);
             }
@@ -164,8 +183,7 @@ weather.hef_update = function(){
             $(weather.weather_sum).text(weather_now.cond.txt);
             $(weather.humidity).text(weather_now.hum + "%");
             $(weather.current_temp).text(weather_now.tmp + "°");
-            $(weather.visibility).text("V:" + weather_now.vis.parseInt() * 1000 + "m")
-
+            $(weather.visibility).text("V:" + parseInt(weather_now.vis) * 1000 + "m")
         }
     });
 }
