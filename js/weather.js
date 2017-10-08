@@ -94,7 +94,6 @@ weather.hef_update = function(){
             var weather_today = data.HeWeather5[0].daily_forecast[0];
             $(weather.high_temp).text(weather_today.tmp.max + "°");
             $(weather.low_temp).text(weather_today.tmp.min + "°");
-            //如果有空气质量的数据
             if (data.HeWeather5[0].hasOwnProperty("aqi")){
                 var weather_aqi = data.HeWeather5[0].aqi.city;
 
@@ -144,9 +143,7 @@ weather.hef_update = function(){
                 var sunrise_text = document.createElement("div");
                 var sunset_text = document.createElement("div");
                 sunrise_icon_div.setAttribute("class", "rise_set");
-//                sunrise_icon_div.setAttribute("id", "sunrise_icon_div");
                 sunset_icon_div.setAttribute("class", "rise_set");
-//                sunset_icon_div.setAttribute("id", "sunset_icon_div");
                 sunrise_icon.addClass("wi wi-sunrise");
                 sunset_icon.addClass("wi wi-sunset");
                 sunrise_icon_div.appendChild(sunrise_icon);

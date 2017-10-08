@@ -33,12 +33,7 @@
             </div>
             <div id="su">多云转晴</div>
             <div id="vi">V:1000m</div>
-            <div id="alt">
-//                <div class="pm25">pm2.5:</div>
-//                <div id="pm">535</div>
-//                <div class="aq">空气质量</div>
-//                <div id="aq_text">重度污染</div>
-            </div>
+            <div id="alt"></div>
             <div id="tip">车车儿亲爱的早点睡觉哈哈</div>
         </div>
     </div>
