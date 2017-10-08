@@ -26,4 +26,7 @@
     $fout = fopen("current", "w") or die("Sorry, unable to open file!");
     fwrite($fout, '{"hef": "'.$ans.'", "owm": "'.ucwords($supr).'"}');
     fclose($fout);
+    $file = "current";
+    $data = file_get_contents($file);
+    echo $data;
 ?>
