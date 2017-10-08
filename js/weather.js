@@ -94,9 +94,27 @@ weather.hef_update = function(){
             var weather_today = data.HeWeather5[0].daily_forecast[0];
             $(weather.high_temp).text(weather_today.tmp.max + "°");
             $(weather.low_temp).text(weather_today.tmp.min + "°");
-            var weather_aqi = data.HeWeather5[0].aqi.city;
-            $(weather.pm).text(weather_aqi.pm25);
-            $(weather.aq_text).text(weather_aqi.qlty);
+            //如果有空气质量的数据
+            if (data.HeWeather5[0].hasOwnProperty("aqi")){
+                var weather_aqi = data.HeWeather5[0].aqi.city;
+
+                var aqi_key = document.createElement("div");
+                aqi_key.addClass("pm25");
+                aqi_key.innerText="PM2.5:";
+                var aqi_vel = document.createElement("div");
+                aqi_vel.setAttribute("id", "pm");
+                document.getElementById("hhmmss").appendChild(aqi_key);
+                document.getElementById("hhmmss").appendChild(aqi_vel);
+                var aq_key = document.createElement("div");
+                aq_key.addClass("aq");
+                aq_key.innerText="空气质量: ";
+                var aq_text = document.createElement("div");
+                aq_text.setAttribute("id", "aq_text");
+                document.getElementById("alt").appendChild(aq_key);
+                document.getElementById("alt").appendChild(aq_text);
+                $(weather.pm).text(weather_aqi.pm25);
+                $(weather.aq_text).text(weather_aqi.qlty);
+            }
         }
     });
     $.ajax({
@@ -117,6 +135,33 @@ weather.hef_update = function(){
                 $(weather.weather_sum).addClass("little");
             }
             $(weather.weather_sum).text(weather_now.cond.txt);
+            weather_today_rise_set = data.HeWeather5[0].daily_forecast[0].astro;
+            if (data.HeWeather5[0].hasOwnProperty("aqi") != true){
+                var sunrise_icon_div = document.createElement("div");
+                var sunrise_icon = document.createElement("i");
+                var sunset_icon_div = document.createElement("div");
+                var sunset_icon = document.createElement("i");
+                var sunrise_text = document.createElement("div");
+                var sunset_text = document.createElement("div");
+                sunrise_icon_div.setAttribute("class", "rise_set");
+//                sunrise_icon_div.setAttribute("id", "sunrise_icon_div");
+                sunset_icon_div.setAttribute("class", "rise_set");
+//                sunset_icon_div.setAttribute("id", "sunset_icon_div");
+                sunrise_icon.addClass("wi wi-sunrise");
+                sunset_icon.addClass("wi wi-sunset");
+                sunrise_icon_div.appendChild(sunrise_icon);
+                sunset_icon_div.appendChild(sunset_icon);
+                sunrise_text.setAttribute("class", "r_s");
+                sunrise_text.setAttribute("id", "s_r");
+                sunset_text.setAttribute("class", "r_s");
+                sunset_text.setAttribute("id", "s_r");
+                document.getElementById("alt").appendChild(sunrise_icon_div);
+                document.getElementById("alt").appendChild(sunrise_text);
+                document.getElementById("alt").appendChild(sunset_icon_div);
+                document.getElementById("alt").appendChild(sunset_text);
+                $(weather.sunrise).text(weather_today_rise_set.sr);
+                $(weather.sunset).text(weather_today_rise_set.ss);
+            }
             $(weather.humidity).text(weather_now.hum + "%");
             $(weather.current_temp).text(weather_now.tmp + "°");
         }

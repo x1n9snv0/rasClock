@@ -18,7 +18,7 @@
 <body>
     <script type="text/javascript">driver();</script>
     <div class="time_area">
-        <div class="hhmmss">
+        <div id="hhmmss">
             <div id="hhmm">23:16</div>
             <div id="ss">19</div>
         </div>
@@ -33,11 +33,11 @@
             </div>
             <div id="su">多云转晴</div>
             <div id="vi">V:1000m</div>
-            <div class="aqi">
-                <div class="pm25">pm2.5:</div>
-                <div id="pm">535</div>
-                <div class="aq">AQ:</div>
-                <div id="aq_text">重度污染</div>
+            <div id="alt">
+//                <div class="pm25">pm2.5:</div>
+//                <div id="pm">535</div>
+//                <div class="aq">空气质量</div>
+//                <div id="aq_text">重度污染</div>
             </div>
             <div id="tip">车车儿亲爱的早点睡觉哈哈</div>
         </div>
