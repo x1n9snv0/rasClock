@@ -123,9 +123,10 @@ weather.hef_update = function(){
                     if (alt_node.childNodes.length == 4){
                         alt_node.childNodes[2].style.display = "none";
                         alt_node.childNodes[3].style.display = "none";
+                        alt_node.replaceChild(aq_key, alt_node.childNodes[0]);
+                        alt_node.replaceChild(aq_text, alt_node.childNodes[1]);
                     }
-                    alt_node.replaceChild(aq_key, alt_node.childNodes[0]);
-                    alt_node.replaceChild(aq_text, alt_node.childNodes[1]);
+
                 }
                 else{
                     alt_node.appendChild(aq_key);

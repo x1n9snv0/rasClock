@@ -86,12 +86,14 @@ var config = {
 //        weather.owm_update();
 //    });
 //}
-configCall = function(data){
-    config.city.hef = data.hef;
-    config.city.owm = data.owm;
-    config.hef_weather.params.city = config.city.hef;
-    weather.hef_update();
-}
+
+//configCall = function(data){
+//    config.city.hef = data.hef;
+//    config.city.owm = data.owm;
+//    config.hef_weather.params.city = config.city.hef;
+//    weather.hef_update();
+//}
+
 config.init = function(){
 //    $.getJSON("https://rasclock.x1n9snv0.top/current", function(data){
 //        config.city.hef = data.hef;
@@ -102,9 +104,15 @@ config.init = function(){
     $.ajax({
         url: "https://rasclock.x1n9snv0.top/current.php",
         data: {
-            callback: "configCall",
+            jsonCallback: "configCall",
         },
         dataType: 'jsonp',
+        success: function(json){
+            config.city.hef = data.hef;
+            config.city.owm = data.owm;
+            config.hef_weather.params.city = config.city.hef;
+            weather.hef_update();
+        }
     });
 
     $.getJSON("js/cn.city.list.json", function(data){
