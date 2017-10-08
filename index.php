@@ -21,6 +21,7 @@
         <div id="hhmmss">
             <div id="hhmm">23:16</div>
             <div id="ss">19</div>
+            <div id="pm25_area"></div>
         </div>
         <div id="date">2017年9月13日</div>
         <div class="weather">

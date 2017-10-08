@@ -48,6 +48,26 @@ body{
     font-size: 48px;
     color: #777;
 }
+#pm25_area{
+    width: 62px;
+    height: 35px;
+    float: left;
+}
+
+.pm25{
+    width: 40px;
+    height: 20px;
+    float: left;
+    margin: 15px 0px 0px 2px;
+    font-size: 18px;
+}
+#pm{
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 15px 0px 0px 0px;
+    font-size: 18px;
+}
 #date{
     width: 334px;
     height: 36px;
@@ -149,21 +169,6 @@ body{
     float: left;
     margin: 0px 0px 0px 5px;
     text-align: center;
-}
-
-.pm25{
-    width: 40px;
-    height: 20px;
-    float: left;
-    margin: 15px 0px 0px 2px;
-    font-size: 18px;
-}
-#pm{
-    width: 20px;
-    height: 20px;
-    float: left;
-    margin: 15px 0px 0px 0px;
-    font-size: 18px;
 }
 
 .aq{

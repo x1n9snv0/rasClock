@@ -99,11 +99,18 @@ weather.hef_update = function(){
                 var aqi_key = document.createElement("div");
                 aqi_key.setAttribute("class", "pm25");
                 aqi_key.setAttribute("id", "pm25");
-                aqi_key.innerText="PM2.5:";
+                aqi_key.innerText="PM2.5: ";
                 var aqi_vel = document.createElement("div");
                 aqi_vel.setAttribute("id", "pm");
-                document.getElementById("hhmmss").appendChild(aqi_key);
-                document.getElementById("hhmmss").appendChild(aqi_vel);
+                var pm25_area = document.getElementById("pm25_area");
+                if (pm25_area.hasChildNodes()){
+                    pm25_area.replaceChild(aqi_key, pm25_area.childNodes[0]);
+                    pm25_area.replaceChild(aqi_vel, pm25_area.childNodes[1]);
+                }
+                else{
+                    pm25_area.appendChild(aqi_key);
+                    pm25_area.appendChild(aqi_vel);
+                }
                 var aq_key = document.createElement("div");
                 aq_key.setAttribute("class", "aq");
                 aq_key.setAttribute("id", "aq_key");
@@ -157,7 +164,6 @@ weather.hef_update = function(){
                     alt_node.appendChild(sunset_icon_div);
                     alt_node.appendChild(sunset_text);
                 }
-
                 $(weather.sunrise).text(weather_today_rise_set.sr);
                 $(weather.sunset).text(weather_today_rise_set.ss);
             }
