@@ -114,7 +114,7 @@ weather.hef_update = function(){
                 $(weather.weather_sum).removeClass();
                 $(weather.weather_sum).addClass("little");
             }
-            $(weather.weather_sum).text(weather_today.cond.txt);
+            $(weather.weather_sum).text(weather_now.cond.txt);
             $(weather.humidity).text(weather_now.hum + "%");
             $(weather.current_temp).text(weather_now.tmp + "°");
         }
