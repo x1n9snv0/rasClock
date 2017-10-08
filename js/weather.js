@@ -164,7 +164,7 @@ weather.hef_update = function(){
             $(weather.weather_sum).text(weather_now.cond.txt);
             $(weather.humidity).text(weather_now.hum + "%");
             $(weather.current_temp).text(weather_now.tmp + "°");
-            $(weather.visibility).text("V:" + weather_now.vis.parseInt * 1000 + "m")
+            $(weather.visibility).text("V:" + weather_now.vis.parseInt() * 1000 + "m")
 
         }
     });
