@@ -115,7 +115,7 @@ weather.hef_update = function(){
                 var aq_key = document.createElement("div");
                 aq_key.setAttribute("class", "aq");
                 aq_key.setAttribute("id", "aq_key");
-                aq_key.innerText="空气质量: ";
+                aq_key.innerText="空气: ";
                 var aq_text = document.createElement("div");
                 aq_text.setAttribute("id", "aq_text");
                 var alt_node = document.getElementById("alt");
