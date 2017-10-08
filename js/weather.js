@@ -126,8 +126,7 @@ weather.hef_update = function(){
                     }
                     alt_node.replaceChild(aq_key, alt_node.childNodes[0]);
                     alt_node.replaceChild(aq_text, alt_node.childNodes[1]);
-
-\                }
+                }
                 else{
                     alt_node.appendChild(aq_key);
                     alt_node.appendChild(aq_text);
