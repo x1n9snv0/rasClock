@@ -133,8 +133,8 @@ weather.owm_update = function(){
             if ($("body").hasClass("night")){
                 $(weather.weather_icon).addClass("wi " + icon.night[data.weather[0].id]);
             }
-            $(weather.humidity).text(weather.roundValue(data.main.humidity) + "%");
-            $(weather.current_temp).text(data.main.temp + "°");
+            //$(weather.humidity).text(weather.roundValue(data.main.humidity) + "%");
+            //$(weather.current_temp).text(data.main.temp + "°");
             $(weather.visibility).text("V:" + data.visibility + "m")
             //$(weather.sunrise).text(format_rs(data.sys.sunrise))
             //$(weather.sunset).text(format_rs(data.sys.sunset))
