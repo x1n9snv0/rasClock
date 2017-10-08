@@ -103,6 +103,7 @@ weather.hef_update = function(){
                 var aqi_vel = document.createElement("div");
                 aqi_vel.setAttribute("id", "pm");
                 var pm25_area = document.getElementById("pm25_area");
+                pm25_area.style.display = "inline";
                 if (pm25_area.hasChildNodes()){
                     pm25_area.replaceChild(aqi_key, pm25_area.childNodes[0]);
                     pm25_area.replaceChild(aqi_vel, pm25_area.childNodes[1]);
@@ -126,12 +127,11 @@ weather.hef_update = function(){
                     alt_node.appendChild(aq_key);
                     alt_node.appendChild(aq_text);
                 }
-                document.getElementById("alt").appendChild(aq_key);
-                document.getElementById("alt").appendChild(aq_text);
                 $(weather.pm).text(weather_aqi.pm25);
                 $(weather.aq_text).text(weather_aqi.qlty);
             }
             else{
+                document.getElementById("pm25_area").style.display = "none";
                 weather_today_rise_set = data.HeWeather5[0].daily_forecast[0].astro;
                 var sunrise_icon_div = document.createElement("div");
                 var sunrise_icon = document.createElement("i");
