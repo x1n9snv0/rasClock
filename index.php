@@ -33,14 +33,6 @@
             </div>
             <div id="su">多云转晴</div>
             <div id="vi">V:1000m</div>
-            /*
-            <div class="rs">
-                <div class="rise_set"><i class="wi wi-sunrise"></i></div>
-                <div class="r_s" id="s_r">06:01</div>
-                <div class="rise_set"><i class="wi wi-sunset"></i></div>
-                <div class="r_s" id="s_s">18:17</div>
-            </div>
-            */
             <div class="aqi">
                 <div class="aq">空气质量：</div>
                 <div class="aq_text">优</div>
