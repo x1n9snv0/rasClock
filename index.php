@@ -35,7 +35,7 @@
             <div id="vi">V:1000m</div>
             <div class="aqi">
                 <div class="aq">AQ:</div>
-                <div class="aq_text">优</div>
+                <div id="aq_text">优</div>
             </div>
             <div id="tip">车车儿亲爱的早点睡觉哈哈</div>
         </div>
