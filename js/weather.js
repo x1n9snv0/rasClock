@@ -131,7 +131,7 @@ weather.hef_update = function(){
                     alt_node.appendChild(aq_key);
                     alt_node.appendChild(aq_text);
                 }
-                $(weather.pm).text(weather_aqi.pm25);
+                $(weather.pm).text(" " + weather_aqi.pm25);
                 $(weather.aq_text).text(weather_aqi.qlty);
             }
             else{
