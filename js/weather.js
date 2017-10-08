@@ -159,6 +159,10 @@ weather.hef_update = function(){
                 if (alt_node.hasChildNodes()){
                     alt_node.replaceChild(sunrise_icon_div, alt_node.childNodes[0]);
                     alt_node.replaceChild(sunrise_text, alt_node.childNodes[1]);
+                    if (alt_node.childNodes.length == 4){
+                        alt_node.childNodes[2].style.display = "inline";
+                        alt_node.childNodes[3].style.display = "inline";
+                    }
                     alt_node.replaceChild(sunset_icon_div, alt_node.childNodes[2]);
                     alt_node.replaceChild(sunset_text, alt_node.childNodes[3]);
                 }
