@@ -130,7 +130,7 @@ weather.hef_update = function(){
                 sunrise_text.setAttribute("class", "r_s");
                 sunrise_text.setAttribute("id", "s_r");
                 sunset_text.setAttribute("class", "r_s");
-                sunset_text.setAttribute("id", "s_r");
+                sunset_text.setAttribute("id", "s_s");
                 document.getElementById("alt").appendChild(sunrise_icon_div);
                 document.getElementById("alt").appendChild(sunrise_text);
                 document.getElementById("alt").appendChild(sunset_icon_div);
