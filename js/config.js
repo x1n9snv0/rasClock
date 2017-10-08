@@ -3,17 +3,6 @@ var config = {
         hef: "",
         owm: "",
     },
-//    now_weather: {
-//        apiBase: 'https://sapi.k780.com/',
-//        params: {
-//            weaid: '',
-//            app: 'weather.today',
-//            appkey: '28291',
-//            sign: '272481f39accdb3c36f474229da4d22c',
-//            format: "json",
-//            jsoncallback: "callback",
-//        }
-//    },
     owm_weather: {
         apiVersion: '2.5/',
         apiBase: 'https://api.openweathermap.org/data/',
@@ -62,31 +51,6 @@ var config = {
     },
 }
 
-//config.init = function(){
-//    $.getJSON("js/now.city.list.json", function(data){
-//        var i = 0;
-//        while(i<data.length){
-//            if (data[i].name == config.city){
-//                config.now_weather.params.weaid = data[i].id.toString(10);
-//                break;
-//            }
-//            i++;
-//        }
-//        weather.now_update();
-//    });
-//    $.getJSON("js/cn.city.list.json", function(data){
-//        var i = 0;
-//        while(i<data.length){
-//            if (data[i].name == config.city){
-//                config.owm_weather.params.id = data[i].id.toString(10);
-//                break;
-//            }
-//            i++;
-//        }
-//        weather.owm_update();
-//    });
-//}
-
 configCall = function(data){
     config.city.hef = data.hef;
     config.city.owm = data.owm;
@@ -95,12 +59,6 @@ configCall = function(data){
 }
 
 config.init = function(){
-//    $.getJSON("https://rasclock.x1n9snv0.top/current", function(data){
-//        config.city.hef = data.hef;
-//        config.city.owm = data.owm;
-//        config.hef_weather.params.city = config.city.hef;
-//        weather.hef_update();
-//    });
     $.ajax({
         url: "https://rasclock.x1n9snv0.top/current.php",
         data: {
