@@ -59,7 +59,7 @@ body{
     height: 20px;
     float: left;
     margin: 15px 0px 0px 2px;
-    padding: 2px 0px 0px 0px;
+    padding: 1px 0px 0px 0px;
     font-size: 16px;
 }
 #pm{
@@ -152,6 +152,7 @@ body{
     float: left;
     margin: 0px 0px 0px 5px;
     font-size: 16px;
+    text-align: center;
 }
 .rise_set{
     width: 22px;
@@ -164,14 +165,6 @@ body{
     height: 20px;
     float: left;
 }
-.aqi{
-    width: 135px;
-    height: 20px;
-    float: left;
-    margin: 0px 0px 0px 5px;
-    text-align: center;
-}
-
 .aq{
     width: 45px;
     height: 20px;
