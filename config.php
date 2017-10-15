@@ -13,13 +13,19 @@
 		<link rel="stylesheet" type="text/css" href="css/config/cs-skin-elastic.css" />
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 	</head>
+	<script type="text/javascript">
+        var checkText=$("#slt_city").find("option:selected").text();
+        var checkValue=$("#slt_city").val();
+        var index=$("#slt_city").get(0).selectedIndex;
+        alert("Text: "+checkText + "\n" + "Value: " + checkValue + "\n" + "Index: " + index + "\n");
+	</script>
 	<body class="color-2">
 		<div class="container">
 			<header class="codrops-header">
 				<h1><span>Select your city</span> 选择你的城市 </h1>
 			</header>
 			<section>
-				<select id="slt_city" class="cs-select cs-skin-elastic">
+				<select onchange="cityChange()" id="slt_city" class="cs-select cs-skin-elastic">
 					<option value="" disabled selected>Select a Country</option>
 					<option value="france" data-class="flag-france">France</option>
 					<option value="brazil" data-class="flag-brazil">Brazil</option>
