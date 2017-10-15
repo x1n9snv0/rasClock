@@ -1,6 +1,6 @@
 function arrayHasKey(array, key){
     for (var rawKey in array){
-        if (key == rawKey){return true;}
+        if (key == array[rawKey]){return true;}
     }
     return false;
 }
