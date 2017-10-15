@@ -123,15 +123,20 @@
                 [].slice.call(document.querySelectorAll('select#slt_city')).forEach(function(el){new SelectFx(el);});
             });
         },
-        onCityChange : function(city_code){
-            var superior_city = $("slt_superior").val();
-            $.post(
+        onCityChange : function(city_name, city_code){
+            var superior_city = $("#slt_superior").val();
+            var superior_city_name = $("#slt_superior").find("option:selected").text();
+            $.getJSON(
                 "setcity.php",
                 {
                     hef: city_code,
                     owm: superior_city,
                 },
-                function (data){alert(data);}
+                function (data){
+                    if (data["hef"] == city_code){
+                        alert("当前城市：" + superior_city_name + city_name);
+                    }
+                }
             );
         }
     }
@@ -392,7 +397,7 @@
             this.options.onSuperiorChange(this.el[this.el.selectedIndex].innerText);
         }
         if (this.el.id == "slt_city"){
-            this.options.onCityChange(this.el.value);
+            this.options.onCityChange(this.el[this.el.selectedIndex].innerText, this.el.value);
         }
 	}
 
