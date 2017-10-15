@@ -6,7 +6,6 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" type="image/x-icon" href="rasicon.png">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/weathericons/weather-icons.css">
 		<link rel="stylesheet" type="text/css" href="css/config/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/config/demo.css" />
