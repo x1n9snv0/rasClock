@@ -14,7 +14,7 @@
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 	</head>
 	<script type="text/javascript">
-	    cityChange = function(){
+	    function cityChange(){
             var checkText=$("#slt_city").find("option:selected").text();
             var checkValue=$("#slt_city").val();
             var index=$("#slt_city").get(0).selectedIndex;
