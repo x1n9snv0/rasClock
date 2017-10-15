@@ -29,7 +29,7 @@
 				<h1><span>Select your city</span> 选择你的城市 </h1>
 			</header>
 			<section>
-				<select onchange="cityChange()" id="slt_city" class="cs-select cs-skin-elastic">
+				<select id="slt_city" class="cs-select cs-skin-elastic">
 					<option value="" disabled selected>Select a Country</option>
 					<option value="france" data-class="flag-france">France</option>
 					<option value="brazil" data-class="flag-brazil">Brazil</option>
