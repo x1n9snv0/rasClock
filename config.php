@@ -42,7 +42,7 @@
 		<script src="js/selectFx.js"></script>
 		<script>
 			(function() {
-				[].slice.call( document.querySelectorAll( 'select#slt_city' ) ).forEach( function(el) {
+				[].slice.call(document.querySelectorAll('select#slt_city')).forEach(function(el){
 					new SelectFx(el);
 				} );
 			})();
