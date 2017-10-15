@@ -21,7 +21,7 @@
                 var index=$("#slt_city").get(0).selectedIndex;
                 alert("Text: "+checkText + "\n" + "Value: " + checkValue + "\n" + "Index: " + index + "\n");
 	        });
-	    }
+	    });
 	</script>
 	<body class="color-2">
 		<div class="container">
