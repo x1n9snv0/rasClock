@@ -56,6 +56,7 @@ a:hover, a:focus {
 .color-2 { background: #bbc7c8; color: #fff; }
 .color-2 a { color: #566473; }
 .color-2 a:hover, .color-2 a:focus { color: #34495e; }
+/*
 .color-3 { background: #00b6ad; color: #fff; }
 .color-3 a { color: #04706b; }
 .color-3 a:hover, .color-3 a:focus { color: #03514d; }
@@ -74,7 +75,7 @@ a:hover, a:focus {
 .color-8 { background: #415c71; color: #fefef8; }
 .color-8 a { color: #7ad7ee; }
 .color-8 a:hover, .color-8 a:focus { color: #539eb1; }
-
+*/
 section {
 	padding: 4% 1em 10%;
 	text-align: center;

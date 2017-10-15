@@ -13,23 +13,13 @@
 		<link rel="stylesheet" type="text/css" href="css/config/cs-skin-elastic.css" />
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 	</head>
-	<body class="color-3">
+	<body class="color-2">
 		<div class="container">
 			<header class="codrops-header">
-				<h1><span>Inspiration for</span> Custom Select Elements</h1>
-				<nav class="codrops-demos">
-					<a href="index.html">Border</a>
-					<a href="index2.html">Underline</a>
-					<a class="current-demo" href="index3.html">Elastic</a>
-					<a href="index4.html">Slide</a>
-					<a href="index5.html">Overlay</a>
-					<a href="index6.html">Rotate</a>
-					<a href="index7.html">Box Select</a>
-					<a href="index8.html">Circular</a>
-				</nav>
+				<h1><span>Select your city</span> 选择你的城市 </h1>
 			</header>
 			<section>
-				<select class="cs-select cs-skin-elastic">
+				<select id="slt_city" class="cs-select cs-skin-elastic">
 					<option value="" disabled selected>Select a Country</option>
 					<option value="france" data-class="flag-france">France</option>
 					<option value="brazil" data-class="flag-brazil">Brazil</option>
@@ -42,7 +32,7 @@
 		<script src="js/selectFx.js"></script>
 		<script>
 			(function() {
-				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+				[].slice.call( document.querySelectorAll( 'select#slt_city' ) ).forEach( function(el) {
 					new SelectFx(el);
 				} );
 			})();
