@@ -1,9 +1,9 @@
 @font-face {
  font-family: 'MFYueHeiNoncommercial-Light';
- src: url('../font/MFYueHeiNoncommercial-Light.eot');
- src: url('../font/MFYueHeiNoncommercial-Light.woff') format('woff'),
- url('../font/MFYueHeiNoncommercial-Light.ttf') format('truetype'),
- url('../font/bMFYueHeiNoncommercial-Light.svg#MFYueHeiNoncommercial-Light') format('svg');
+ src: url('../font/MFYueHei/MFYueHeiNoncommercial-Light.eot');
+ src: url('../font/MFYueHei/MFYueHeiNoncommercial-Light.woff') format('woff'),
+ url('../font/MFYueHei/MFYueHeiNoncommercial-Light.ttf') format('truetype'),
+ url('../font/MFYueHei/MFYueHeiNoncommercial-Light.svg#MFYueHeiNoncommercial-Light') format('svg');
 }
 body{
     padding: 0px;
