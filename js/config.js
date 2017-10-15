@@ -51,22 +51,11 @@ var config = {
     },
 }
 
-configCall = function(data){
-    config.city.hef = data.hef;
-    config.city.owm = data.owm;
+configCall = function(resp){
+    config.city.hef = resp.hef;
+    config.city.owm = resp.owm;
     config.hef_weather.params.city = config.city.hef;
     weather.hef_update();
-}
-
-config.init = function(){
-    $.ajax({
-        url: "https://rasclock.x1n9snv0.top/current.php",
-        data: {
-            jsonCallback: "configCall",
-        },
-        dataType: 'jsonp',
-    });
-
     $.getJSON("js/cn.city.list.json", function(data){
         var i = 0;
         while(i<data.length){
@@ -77,5 +66,15 @@ config.init = function(){
             i++;
         }
         weather.owm_update();
+    });
+}
+
+config.run = function(){
+    $.ajax({
+        url: "https://rasclock.x1n9snv0.top/current.php",
+        data: {
+            jsonCallback: "configCall",
+        },
+        dataType: 'jsonp',
     });
 }
