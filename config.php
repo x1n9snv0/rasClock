@@ -29,7 +29,14 @@
 				<h1><span>Select your city</span> 选择你的城市 </h1>
 			</header>
 			<section>
-				<select onChange="alert('success')" id="slt_city" class="cs-select cs-skin-elastic">
+				<select id="slt_country" class="cs-select cs-skin-elastic">
+					<option value="" disabled selected>Select a Country</option>
+					<option value="france" data-class="flag-france">France</option>
+					<option value="brazil" data-class="flag-brazil">Brazil</option>
+					<option value="argentina" data-class="flag-argentina">Argentina</option>
+					<option value="south-africa" data-class="flag-safrica">South Africa</option>
+				</select>
+				<select id="slt_city" class="cs-select cs-skin-elastic">
 					<option value="" disabled selected>Select a Country</option>
 					<option value="france" data-class="flag-france">France</option>
 					<option value="brazil" data-class="flag-brazil">Brazil</option>
@@ -42,9 +49,14 @@
 		<script src="js/selectFx.js"></script>
 		<script>
 			(function() {
+				[].slice.call(document.querySelectorAll('select#slt_country')).forEach(function(el){
+					new SelectFx(el);
+				});
+			})();
+			(function() {
 				[].slice.call(document.querySelectorAll('select#slt_city')).forEach(function(el){
 					new SelectFx(el);
-				} );
+				});
 			})();
 		</script>
 	</body>
