@@ -12,6 +12,8 @@
 		<link rel="stylesheet" type="text/css" href="css/config/cs-select.css" />
 		<link rel="stylesheet" type="text/css" href="css/config/cs-skin-elastic.css" />
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="js/classie.js"></script>
+		<script type="text/javascript" src="js/selectFx.js"></script>
 		<script type="text/javascript" src="js/buildconfig.js"></script>
 	</head>
 	<body class="color-2">
@@ -19,27 +21,17 @@
 			<header class="codrops-header">
 				<h1><span>Select your city</span>选择你的城市</h1>
 			</header>
-			<section>
-				<select id="slt_provence" class="cs-select cs-skin-elastic">
-					<option value="" disabled selected>选择省份</option>
-					<!--
-					<option value="france" data-class="flag-france">France</option>
-					<option value="brazil" data-class="flag-brazil">Brazil</option>
-					<option value="argentina" data-class="flag-argentina">Argentina</option>
-					<option value="south-africa" data-class="flag-safrica">South Africa</option>
-					-->
-				</select>
-			</section>
+			<section id="slt_provence_sct"></section>
+			<section id="slt_superior_sct"></section>
+			<section id="slt_city_sct"></section>
 		</div>
 		<script>addProvence()</script>
-		<script src="js/classie.js"></script>
-		<script src="js/selectFx.js"></script>
-		<script>
+		<!--script>
 			(function() {
 				[].slice.call(document.querySelectorAll('select#slt_provence')).forEach(function(el){
 					new SelectFx(el);
 				});
 			})();
-		</script>
+		</script-->
 	</body>
 </html>

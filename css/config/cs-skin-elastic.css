@@ -113,11 +113,11 @@ div.cs-skin-elastic {
 /* with more items, more delays declarations are needed */
 
 
-.cs-skin-elastic .cs-options span {
+.cs-skin-elastic .cs-options span{
 	background-repeat: no-repeat;
 	background-position: 1.5em 50%;
 	background-size: 2em auto;
-	padding: 0.8em 1em 0.8em 4em;
+	padding: 0.8em 1em;
 }
 
 .cs-skin-elastic .cs-options span:hover,

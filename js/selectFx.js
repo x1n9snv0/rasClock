@@ -56,9 +56,85 @@
 		// when opening the select element, the default placeholder (if any) is shown
 		stickyPlaceholder : true,
 		// callback when changing the value
-		onChange : function( val ) { alert(val); }
-	}
+		onProvenceChange : function(provence){
+            $.getJSON("js/city.json", function(data){
+                var i = 0;
+                var superiorArray = new Array();
+                while(i<data.length){
+                    if (data[i].pro_cn == provence){
+                        if (!arrayHasKey(superiorArray, data[i].superior_en)){
+                            superiorArray[data[i].superior_en]=data[i].superior_cn;
+                        }
+                    }
+                    i++;
+                }
+                superiorArray.sort();
+                var slt = document.createElement("select");
+                slt.setAttribute("id", "slt_superior");
+                slt.setAttribute("class", "cs-select cs-skin-elastic");
+                var opt =document.createElement("option");
+                opt.setAttribute("value", "");
+                opt.setAttributeNode(document.createAttribute("disabled"));
+                opt.setAttributeNode(document.createAttribute("selected"));
+                opt.innerText="选择一级城市";
+                slt.appendChild(opt);
+                for (var superior in superiorArray){
+                    var opt = document.createElement("option");
+                    opt.setAttribute("value", superior);
+                    opt.innerText=superiorArray[superior];
+                    slt.appendChild(opt);
+                }
+                var sup_sct = document.getElementById("slt_superior_sct");
+                sup_sct.appendChild(slt);
+                [].slice.call(document.querySelectorAll('select#slt_superior')).forEach(function(el){new SelectFx(el);});
 
+            });
+        },
+        onSuperiorChange : function(superior){
+            $.getJSON("js/city.json", function(data){
+                var i = 0;
+                var cityArray = new Array();
+                while(i<data.length){
+                    if (data[i].superior_cn == superior){
+                        if (!arrayHasKey(cityArray, data[i].cn)){
+                            cityArray[data[i].city_code]=data[i].cn;
+                        }
+                    }
+                    i++;
+                }
+                cityArray.sort();
+                var slt = document.createElement("select");
+                slt.setAttribute("id", "slt_city");
+                slt.setAttribute("class", "cs-select cs-skin-elastic");
+                var opt =document.createElement("option");
+                opt.setAttribute("value", "");
+                opt.setAttributeNode(document.createAttribute("disabled"));
+                opt.setAttributeNode(document.createAttribute("selected"));
+                opt.innerText="选择二级城市";
+                slt.appendChild(opt);
+                for (var city in cityArray){
+                    var opt = document.createElement("option");
+                    opt.setAttribute("value", city);
+                    opt.innerText=cityArray[city];
+                    slt.appendChild(opt);
+                }
+                var sup_sct = document.getElementById("slt_city_sct");
+                sup_sct.appendChild(slt);
+                [].slice.call(document.querySelectorAll('select#slt_city')).forEach(function(el){new SelectFx(el);});
+            });
+        },
+        onCityChange : function(city_code){
+            var superior_city = $("slt_superior").val();
+            $.post(
+                "setcity.php",
+                {
+                    hef: city_code,
+                    owm: superior_city,
+                },
+                function (data){alert(data);}
+            );
+        }
+    }
 	/**
 	 * init function
 	 * initialize and cache some vars
@@ -242,7 +318,6 @@
 	SelectFx.prototype._toggleSelect = function() {
 		// remove focus class if any..
 		this._removeFocus();
-		
 		if( this._isOpen() ) {
 			if( this.current !== -1 ) {
 				// update placeholder text
@@ -251,6 +326,21 @@
 			classie.remove( this.selEl, 'cs-active' );
 		}
 		else {
+		    var superior_section = document.getElementById("slt_superior_sct");
+		    var city_section = document.getElementById("slt_city_sct");
+		    if (this.el.id == "slt_provence"){
+                if (superior_section.hasChildNodes()==true){
+                    superior_section.removeChild(superior_section.childNodes[0]);
+                }
+                if (city_section.hasChildNodes()==true){
+                    city_section.removeChild(city_section.childNodes[0]);
+                }
+		    }
+		    if (this.el.id == "slt_superior"){
+		        if (city_section.hasChildNodes()==true){
+                    city_section.removeChild(city_section.childNodes[0]);
+                }
+		    }
 			if( this.hasDefaultPlaceholder && this.options.stickyPlaceholder ) {
 				// everytime we open we wanna see the default placeholder text
 				this.selPlaceholder.textContent = this.selectedOpt.textContent;
@@ -295,9 +385,15 @@
 				window.location = opt.getAttribute( 'data-link' );
 			}
 		}
-
-		// callback
-		this.options.onChange( this.el.value );
+        if (this.el.id == "slt_provence"){
+            this.options.onProvenceChange(this.el.value);
+        }
+        if (this.el.id == "slt_superior"){
+            this.options.onSuperiorChange(this.el[this.el.selectedIndex].innerText);
+        }
+        if (this.el.id == "slt_city"){
+            this.options.onCityChange(this.el.value);
+        }
 	}
 
 	/**
