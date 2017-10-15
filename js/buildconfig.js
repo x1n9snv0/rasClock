@@ -11,7 +11,7 @@ function addProvence(){
         var provArray = new Array();
         while(i<data.length){
             if (!arrayHasKey(provArray, data[i].pro_cn)){
-                push(provArray, data[i].pro_cn);
+                provArray.push(data[i].pro_cn);
             }
             i++;
         }
