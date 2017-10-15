@@ -38,6 +38,7 @@
 				</select>
 			</section>
 		</div>
+		<!--
 		<script src="js/classie.js"></script>
 		<script src="js/selectFx.js"></script>
 		<script>
@@ -47,5 +48,6 @@
 				} );
 			})();
 		</script>
+		-->
 	</body>
 </html>
