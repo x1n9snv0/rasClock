@@ -1,12 +1,12 @@
-var tip = {
+let tip = {
     loc: "#tip",
-}
+};
 
 
 tip.update = function (){
-    var ct = new Date();
-    var day = ct.getDay();
-    var st = switch_ut(ct);
+    let ct = new Date();
+    let day = ct.getDay();
+    let st = switch_ut(ct);
     if (day >= 1 && day <= 5){
         if (st < 100){$(tip.loc).text(config.tips.workday.night);}
         if (st >= 100 && st < 710){$(tip.loc).text(config.tips.workday.midnight);}
@@ -33,4 +33,4 @@ tip.update = function (){
         if (st >= 2230 && st < 2330){$(tip.loc).text(config.tips.weekend.sleep);}
         if (st >= 2330 && st < 2359){$(tip.loc).text(config.tips.weekend.night);}
     }
-}
+};

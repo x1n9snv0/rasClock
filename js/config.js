@@ -49,7 +49,7 @@ var config = {
             midnight: "做个好梦呀",
         },
     },
-}
+};
 
 configCall = function(resp){
     config.city.hef = resp.hef;
@@ -59,7 +59,7 @@ configCall = function(resp){
     $.getJSON("js/cn.city.list.json", function(data){
         var i = 0;
         while(i<data.length){
-            if (data[i].name == config.city.owm){
+            if (data[i].name === config.city.owm){
                 config.owm_weather.params.id = data[i].id.toString(10);
                 break;
             }
